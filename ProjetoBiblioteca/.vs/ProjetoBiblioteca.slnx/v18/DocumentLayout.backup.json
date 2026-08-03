@@ -1,0 +1,253 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\configura\u00E7\u00F5es\\addcontextconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\configura\u00E7\u00F5es\\addcontextconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\context\\mssql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\context\\mssql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\model\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\model\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\model\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\model\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\model\\emprestimoaluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\model\\emprestimoaluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\model\\base\\modelobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\model\\base\\modelobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\data\\dto\\alunoemprestimodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\data\\dto\\alunoemprestimodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\model\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\model\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\model\\emprestimofuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\model\\emprestimofuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\data\\dto\\funcionarioemprestimodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\data\\dto\\funcionarioemprestimodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|d:\\gustavo\\codigos\\microsoftvisualstudio\\api2\\projeto-api\\asp-net\\projetobiblioteca\\projeto-biblioteca-parte-backend\\projetobiblioteca\\projetobiblioteca\\data\\dto\\livroemprestimodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3DCC348-EEBB-6AAD-9B5A-762553EA5CCB}|projetobiblioteca\\projetobiblioteca.csproj|solutionrelative:projetobiblioteca\\data\\dto\\livroemprestimodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Program.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Program.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Program.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T01:48:14.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddContextConfiguration.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Configura\u00E7\u00F5es\\AddContextConfiguration.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Configura\u00E7\u00F5es\\AddContextConfiguration.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Configura\u00E7\u00F5es\\AddContextConfiguration.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Configura\u00E7\u00F5es\\AddContextConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T00:52:10.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MSSQL.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Context\\MSSQL.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Context\\MSSQL.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Context\\MSSQL.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Context\\MSSQL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T22:38:19.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AlunosController.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Controllers\\AlunosController.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Controllers\\AlunosController.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Controllers\\AlunosController.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Controllers\\AlunosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T16:28:00.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\appsettings.json",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\appsettings.json",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\appsettings.json",
+              "RelativeToolTip": "ProjetoBiblioteca\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-02T22:49:41.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmprestimoFuncionario.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\EmprestimoFuncionario.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Model\\EmprestimoFuncionario.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\EmprestimoFuncionario.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Model\\EmprestimoFuncionario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T17:06:00.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Aluno.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Model\\Aluno.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Aluno.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Model\\Aluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T16:33:22.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Funcionario.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Model\\Funcionario.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Funcionario.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Model\\Funcionario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T16:37:40.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Livro.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Livro.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Model\\Livro.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Livro.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Model\\Livro.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T16:40:20.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmprestimoAluno.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\EmprestimoAluno.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Model\\EmprestimoAluno.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\EmprestimoAluno.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Model\\EmprestimoAluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T17:15:33.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AlunoEmprestimoDTO.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Data\\DTO\\AlunoEmprestimoDTO.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Data\\DTO\\AlunoEmprestimoDTO.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Data\\DTO\\AlunoEmprestimoDTO.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Data\\DTO\\AlunoEmprestimoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T17:17:08.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ModeloBase.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Base\\ModeloBase.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Model\\Base\\ModeloBase.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Model\\Base\\ModeloBase.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Model\\Base\\ModeloBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T16:46:37.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FuncionarioEmprestimoDTO.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Data\\DTO\\FuncionarioEmprestimoDTO.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Data\\DTO\\FuncionarioEmprestimoDTO.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Data\\DTO\\FuncionarioEmprestimoDTO.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Data\\DTO\\FuncionarioEmprestimoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T17:17:36.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LivroEmprestimoDTO.cs",
+              "DocumentMoniker": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Data\\DTO\\LivroEmprestimoDTO.cs",
+              "RelativeDocumentMoniker": "ProjetoBiblioteca\\Data\\DTO\\LivroEmprestimoDTO.cs",
+              "ToolTip": "D:\\GUSTAVO\\Codigos\\MicrosoftVisualStudio\\API2\\projeto-api\\asp-net\\ProjetoBiblioteca\\Projeto-Biblioteca-parte-BACKEND\\ProjetoBiblioteca\\ProjetoBiblioteca\\Data\\DTO\\LivroEmprestimoDTO.cs",
+              "RelativeToolTip": "ProjetoBiblioteca\\Data\\DTO\\LivroEmprestimoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T17:17:52.679Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

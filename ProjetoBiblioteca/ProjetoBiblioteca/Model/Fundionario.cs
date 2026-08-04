@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace projetobiblioteca.Data
 {
     [Table("alunos")]
-    public class Aluno : ModeloBase
+    public class Fundionario : ModeloBase
     {
         [Required]
         [MaxLength(100)]
@@ -22,7 +22,7 @@ namespace projetobiblioteca.Data
         public string Genero { get; set; }
         [Required]
         [MaxLength(100)]
-        [Column(TypeName ="varchar(100")]
+        [Column(TypeName ="varchar(100)")]
         public string Endereço { get; set; }
         [Required]
         [MaxLength(12)]

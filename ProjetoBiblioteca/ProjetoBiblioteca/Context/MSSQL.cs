@@ -10,7 +10,7 @@ namespace projetobiblioteca.Context
         {
             
         }
-        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Fundionario> Alunos { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<EmprestimoAluno> EmpAluno { get; set; }

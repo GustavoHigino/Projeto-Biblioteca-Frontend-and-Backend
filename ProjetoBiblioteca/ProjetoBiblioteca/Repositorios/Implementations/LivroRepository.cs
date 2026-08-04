@@ -8,5 +8,28 @@ namespace projetobiblioteca.Repositorios.Implementations
         public LivroRepository(MSSQL context) : base(context)
         {
         }
+
+        public Livro Disable(long id)
+        {
+            var findedEntity=ShowById(id);
+            if (findedEntity == null)
+            {
+                return null;
+            }
+            findedEntity.Habilitado = false;
+            _context.SaveChanges();
+            return findedEntity;
+        }
+
+        public Livro Enable(long id)
+        {
+            var findedEntity = ShowById(id);
+            if(findedEntity == null)
+            {
+                return null;
+            }
+            findedEntity.Habilitado = true;
+            return findedEntity;
+        }
     }
 }

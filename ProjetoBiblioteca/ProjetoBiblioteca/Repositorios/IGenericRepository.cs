@@ -1,4 +1,5 @@
-﻿using projetobiblioteca.Model.Base;
+﻿using projetobiblioteca.Data;
+using projetobiblioteca.Model.Base;
 
 namespace projetobiblioteca.Repositorios
 {
@@ -9,5 +10,6 @@ namespace projetobiblioteca.Repositorios
         T Add(T entity);
         T Update(T entity);
         
+
     }
 }

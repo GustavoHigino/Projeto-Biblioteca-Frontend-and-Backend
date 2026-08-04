@@ -9,18 +9,31 @@ namespace projetobiblioteca.Data
     public class Funcionario : ModeloBase
     {
         [Required]
+        [MaxLength(100)]
+        [Column(TypeName ="varchar(100)")]
         public string Nome {  get; set; }
         [Required]
+        [MaxLength(100)]
+        [Column(TypeName ="varchar(100)")]
         public string Função {  get; set; }
         [Required]
+        [MaxLength(9)]
+        [Column(TypeName ="varchar(9)")]
         public string Genero { get; set; }
         [Required]
+        [MaxLength(12)]
+        [Column(TypeName ="varchar(12)")]
         public string Telefone { get; set; }
         [Required]
+        [MaxLength(100)]
+        [Column(TypeName ="varchar(100)")]
         public string Endereço {  get; set; }
         [Required]
+        [MaxLength(80)]
+        [Column(TypeName ="varchar(80)")]
         public string Email { get; set; }
         [Required]
+        [Column(TypeName ="date")]
         public DateTime Nascimento { get; set; }
 
         public bool Habilitado { get; set; } = true;

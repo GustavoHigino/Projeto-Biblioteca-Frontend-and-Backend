@@ -1,6 +1,9 @@
 using projetobiblioteca.Configurações;
+using projetobiblioteca.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.AddLoggingSerilog();
 
 // Add services to the container.
 

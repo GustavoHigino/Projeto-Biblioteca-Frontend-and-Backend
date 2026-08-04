@@ -6,5 +6,16 @@ namespace ProjetoBiblioteca.Controllers;
 [Route("[controller]")]
 public class AlunosController : ControllerBase
 {
-    
+    private readonly ILogger<AlunosController> _logger;
+
+    public AlunosController()
+    {
+        
+    }
+    [HttpGet]
+    public IActionResult Get()
+    {
+        return Ok();
+
+    }
 }

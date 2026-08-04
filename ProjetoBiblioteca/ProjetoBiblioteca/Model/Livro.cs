@@ -9,13 +9,18 @@ namespace projetobiblioteca.Data
     public class Livro : ModeloBase
     {
         [Required]
+        [MaxLength(100)]
+        [Column(TypeName ="varchar(100)")]
         public string Autor { get; set; }
         [Required]
-        public int Estoque {  get; set; }
+        public long Estoque {  get; set; }
         [Required]
+        [MaxLength(100)]
+        [Column(TypeName ="varchar(100)")]
         public string Nome { get; set; }
         [Required]
-        public int Emprestados { get; set; }
+
+        public long Emprestados { get; set; }
         
         public bool Habilitado { get; set; } = true;
         public ICollection<EmprestimoAluno> EmprestimosAluno 

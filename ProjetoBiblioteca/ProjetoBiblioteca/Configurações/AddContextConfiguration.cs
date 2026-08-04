@@ -23,8 +23,8 @@ namespace projetobiblioteca.Configurações
                 ("Password_Database");
             if (!string.IsNullOrWhiteSpace(senha))
             {
-                connectionString.Replace
-                    ("${ Password_Database}"
+                connectionString=connectionString.Replace
+                    ("${Password_Database}"
                     , senha);
             }
             services.AddDbContext<MSSQL>(

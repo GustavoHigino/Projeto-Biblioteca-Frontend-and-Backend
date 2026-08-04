@@ -10,12 +10,14 @@ namespace projetobiblioteca.Model
     public class EmprestimoAluno : ModeloBase
     {
         [Required]
-        public int IdAluno { get; set; }
+        public long IdAluno { get; set; }
         [Required]
-        public int IdLivro { get; set; }
+        public long IdLivro { get; set; }
         [Required]
+        [Column(TypeName ="date")]
         public DateTime Inicio { get; set; }
         [Required]
+        [Column(TypeName = "date")]
         public DateTime Fim { get; set; }
         [Required]
         public bool Devolvido { get; set; } = false;

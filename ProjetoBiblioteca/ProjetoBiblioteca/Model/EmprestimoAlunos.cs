@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace projetobiblioteca.Model
 {
     [Table("EmprestimosAlunos")]
-    public class EmprestimoAluno : ModeloBase
+    public class EmprestimoAlunos : ModeloBase
     {
         [Required]
         public long IdAluno { get; set; }
@@ -22,7 +22,7 @@ namespace projetobiblioteca.Model
         [Required]
         public bool Devolvido { get; set; } = false;
         [ForeignKey(nameof(IdAluno))]
-        public Fundionario Aluno { get; set; }
+        public Aluno Aluno { get; set; }
         [ForeignKey(nameof(IdLivro))]
         public Livro Livro { get; set; }
     }

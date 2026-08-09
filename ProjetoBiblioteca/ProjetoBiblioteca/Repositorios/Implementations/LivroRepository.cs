@@ -29,6 +29,7 @@ namespace projetobiblioteca.Repositorios.Implementations
                 return null;
             }
             findedEntity.Habilitado = true;
+            _context.SaveChanges();
             return findedEntity;
         }
     }

@@ -1,40 +1,31 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Pagination;
 using projetobiblioteca.Repositorios;
 
 namespace projetobiblioteca.Servicos.Implementation
 {
-    public class AlunoService : IAlunoService
+    public class AlunoService : GenericService<Aluno>,IAlunoService, IGenericService<Aluno>
 
     {
         private readonly IAlunoRepository _alunoRepository;
-        public AlunoService(IAlunoRepository alunoRepository)
+        public AlunoService(IAlunoRepository alunoRepository,
+            IGenericRepository<Aluno> repository
+        ):base(repository)
         {
             _alunoRepository = alunoRepository;
         }
+        
 
-        public IQueryable<Fundionario> Show()
+        public Aluno Enable(long id)
         {
-            return _alunoRepository.Show();
+            return _alunoRepository.Enable(id);
         }
 
-        public Fundionario ShowById(long id)
+        public Aluno Disable(long id)
         {
-            return _alunoRepository.ShowById(id);
+            return _alunoRepository.Disable(id);
         }
 
-        public Fundionario Add(Fundionario entity)
-        {
-            return _alunoRepository.Add(entity);
-        }
-
-        public Fundionario Update(Fundionario entity)
-        {
-            return _alunoRepository.Update(entity);
-        }
-
-        public bool EnableOrDisable(bool enableOrDisable)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

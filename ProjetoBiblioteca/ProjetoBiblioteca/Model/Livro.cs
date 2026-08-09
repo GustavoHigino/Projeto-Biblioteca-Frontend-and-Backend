@@ -23,8 +23,8 @@ namespace projetobiblioteca.Data
         public long Emprestados { get; set; }
         
         public bool Habilitado { get; set; } = true;
-        public ICollection<EmprestimoAluno> EmprestimosAluno 
-        { get; set; } = new List<EmprestimoAluno>();
+        public ICollection<EmprestimoAlunos> EmprestimosAluno 
+        { get; set; } = new List<EmprestimoAlunos>();
         public ICollection<EmprestimoFuncionario> EmprestimosFuncionario
         { get; set; } = new List<EmprestimoFuncionario>();
 

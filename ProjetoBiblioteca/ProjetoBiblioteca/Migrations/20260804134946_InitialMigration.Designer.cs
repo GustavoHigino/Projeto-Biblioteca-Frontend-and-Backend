@@ -25,7 +25,7 @@ namespace projetobiblioteca.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("projetobiblioteca.Data.Fundionario", b =>
+            modelBuilder.Entity("projetobiblioteca.Data.Aluno", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +158,7 @@ namespace projetobiblioteca.Migrations
                     b.ToTable("livros");
                 });
 
-            modelBuilder.Entity("projetobiblioteca.Model.EmprestimoAluno", b =>
+            modelBuilder.Entity("projetobiblioteca.Model.EmprestimoFuncionari", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -222,9 +222,9 @@ namespace projetobiblioteca.Migrations
                     b.ToTable("EmprestimosFuncionarios");
                 });
 
-            modelBuilder.Entity("projetobiblioteca.Model.EmprestimoAluno", b =>
+            modelBuilder.Entity("projetobiblioteca.Model.EmprestimoFuncionari", b =>
                 {
-                    b.HasOne("projetobiblioteca.Data.Fundionario", "Fundionario")
+                    b.HasOne("projetobiblioteca.Data.Aluno", "Aluno")
                         .WithMany("EmprestimosAluno")
                         .HasForeignKey("IdAluno")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -236,7 +236,7 @@ namespace projetobiblioteca.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Fundionario");
+                    b.Navigation("Aluno");
 
                     b.Navigation("Livro");
                 });
@@ -260,7 +260,7 @@ namespace projetobiblioteca.Migrations
                     b.Navigation("Livro");
                 });
 
-            modelBuilder.Entity("projetobiblioteca.Data.Fundionario", b =>
+            modelBuilder.Entity("projetobiblioteca.Data.Aluno", b =>
                 {
                     b.Navigation("EmprestimosAluno");
                 });

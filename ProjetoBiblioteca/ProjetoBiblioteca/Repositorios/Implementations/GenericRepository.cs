@@ -1,5 +1,7 @@
-﻿using projetobiblioteca.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using projetobiblioteca.Context;
 using projetobiblioteca.Model.Base;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios.Implementations
 {
@@ -49,6 +51,12 @@ namespace projetobiblioteca.Repositorios.Implementations
             return entityFinded;
         }
 
-        
+        public async Task<PaginationClass<T>> PagedList(int itensPage, long pageCurrently)
+        {
+            var totalItems = await _context.Set<T>().AsNoTracking().CountAsync();
+            var paginedList = new PaginationClass<T>(totalItems, itensPage, pageCurrently,
+                Show().AsNoTracking().OrderBy(s=>s.Id));
+            return paginedList;
+        }
     }
 }

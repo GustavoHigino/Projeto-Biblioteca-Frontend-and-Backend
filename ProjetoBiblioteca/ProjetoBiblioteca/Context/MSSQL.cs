@@ -10,15 +10,15 @@ namespace projetobiblioteca.Context
         {
             
         }
-        public DbSet<Fundionario> Alunos { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
-        public DbSet<EmprestimoAluno> EmpAluno { get; set; }
+        public DbSet<EmprestimoAlunos> EmpAluno { get; set; }
         public DbSet<EmprestimoFuncionario> EmpFuncionario { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<EmprestimoAluno>()
+            modelBuilder.Entity<EmprestimoAlunos>()
                 .HasOne(e => e.Livro)
                 .WithMany(e => e.EmprestimosAluno)
                 .HasForeignKey(e => e.IdLivro)
@@ -28,7 +28,7 @@ namespace projetobiblioteca.Context
                 .WithMany(e => e.EmprestimosFuncionario)
                 .HasForeignKey(e => e.IdFuncionario)
                 .OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<EmprestimoAluno>()
+            modelBuilder.Entity<EmprestimoAlunos>()
                 .HasOne(e => e.Aluno)
                 .WithMany(e => e.EmprestimosAluno)
                 .HasForeignKey(e => e.IdAluno)

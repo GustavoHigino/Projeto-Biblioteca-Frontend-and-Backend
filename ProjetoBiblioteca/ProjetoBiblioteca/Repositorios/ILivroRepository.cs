@@ -1,4 +1,5 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios
 {

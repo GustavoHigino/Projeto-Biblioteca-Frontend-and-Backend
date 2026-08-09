@@ -1,11 +1,12 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios
 {
-    public interface IAlunoRepository : IGenericRepository<Fundionario>
+    public interface IAlunoRepository : IGenericRepository<Aluno>
     {
-        Fundionario Enable(long id);
-        Fundionario Disable(long id);
+        Aluno Enable(long id);
+        Aluno Disable(long id);
 
 
     }

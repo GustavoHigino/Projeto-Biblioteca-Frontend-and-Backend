@@ -1,14 +1,14 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Servicos
 {
-    public interface IAlunoService
+    public interface IAlunoService: IGenericService<Aluno>
     {
-        IQueryable<Fundionario> Show();
-        Fundionario ShowById(long id);
-        Fundionario Add(Fundionario aluno);
-        Fundionario Update(Fundionario aluno);
-        bool EnableOrDisable(bool enableOrDisable);
+        
+        Aluno Enable(long id);
+        Aluno Disable(long id);
+        
 
 
     }

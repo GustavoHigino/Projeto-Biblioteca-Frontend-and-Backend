@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace projetobiblioteca.Data
 {
     [Table("alunos")]
-    public class Fundionario : ModeloBase
+    public class Aluno : ModeloBase
     {
         [Required]
         [MaxLength(100)]
@@ -37,7 +37,7 @@ namespace projetobiblioteca.Data
         public DateTime Nascimento { get; set; }
 
         public bool Habilitado { get; set; } = true;
-        public ICollection<EmprestimoAluno> EmprestimosAluno { get; set; } = new List<EmprestimoAluno>();
+        public ICollection<EmprestimoAlunos> EmprestimosAluno { get; set; } = new List<EmprestimoAlunos>();
 
     }
 }

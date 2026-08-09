@@ -1,10 +1,12 @@
 ﻿using projetobiblioteca.Model;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios
 {
-    public interface IEmprestimoAlunoRepository : IGenericRepository<EmprestimoAluno>
+    public interface IEmprestimoAlunoRepository : IGenericRepository<EmprestimoAlunos>
     {
-        EmprestimoAluno Devolvido(long id);
+        EmprestimoAlunos Returned(long id);
+        EmprestimoAlunos NotReturned(long id);
         
     }
 }

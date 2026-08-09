@@ -1,10 +1,11 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios
 {
     public interface IFuncionarioRepository : IGenericRepository<Funcionario>
     {
-        Fundionario Enable(long id);
-        Fundionario Disable(long id);
+        Funcionario Enable(long id);
+        Funcionario Disable(long id);
     }
 }

@@ -1,18 +1,41 @@
-﻿using projetobiblioteca.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using projetobiblioteca.Context;
 using projetobiblioteca.Data;
+using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios.Implementations
 {
-    public class AlunoRepository : GenericRepository<Fundionario>, IAlunoRepository
+    public class AlunoRepository : GenericRepository<Aluno>, IAlunoRepository
     {
         
         public AlunoRepository(MSSQL context) : base(context)
         {
         }
+        
 
-        public bool EnableOrDisable(bool enableOrDisable)
+        public Aluno Disable(long id)
         {
-            Sho
+            var foundEntity = ShowById(id);
+            if (foundEntity == null)
+            {
+                return null;
+            }
+            foundEntity.Habilitado = false;
+            _context.SaveChanges();
+            return foundEntity;
         }
+
+        public Aluno Enable(long id)
+        {
+            var foundEntity = ShowById(id);
+            if (foundEntity == null)
+            {
+                return null;
+            }
+            foundEntity.Habilitado = true;
+            _context.SaveChanges();
+            return foundEntity;
+        }
+
     }
 }

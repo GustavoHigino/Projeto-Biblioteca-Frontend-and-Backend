@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
 using projetobiblioteca.Servicos;
@@ -6,6 +7,7 @@ namespace ProjetoBiblioteca.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize("Bearer")]
 public class AlunosController : ControllerBase
 {
     private readonly ILogger<AlunosController> _logger;
@@ -18,7 +20,7 @@ public class AlunosController : ControllerBase
         _logger = logger;
     }
     [HttpGet]
-    public async Task<IActionResult> ShowPagined([FromQuery]int itensPage,long pageCurrently)
+    public async Task<IActionResult> ShowPagined([FromQuery]int itensPage,[FromQuery]long pageCurrently)
     {
         _logger.LogInformation("Fetching a Ordened list");
         var pagedList=  await _alunoService.PagedList(itensPage, pageCurrently);
@@ -41,7 +43,7 @@ public class AlunosController : ControllerBase
         if (student == null)
         {
             _logger.LogWarning("student non-existent");
-            return BadRequest("student non-existent");
+            return NotFound("student non-existent");
         }
         _logger.LogInformation("Showing student by id below");
         return Ok(student);
@@ -72,7 +74,7 @@ public class AlunosController : ControllerBase
         _logger.LogInformation("Update done with succesfully");
         return Ok(student);
     }
-    [HttpPatch("{id:long}")]
+    [HttpPatch("enable/{id:long}")]
     public IActionResult PatchEnableStudantsById([FromRoute]long id)
     {
         var student=_alunoService.Enable(id);
@@ -84,7 +86,7 @@ public class AlunosController : ControllerBase
         _logger.LogInformation($"Student {student.Id}, {student.Nome} update for Enable with succesfully");
         return Ok(student);
     }
-    [HttpPatch("{id:long}")]
+    [HttpPatch("disable/{id:long}")]
     public IActionResult PatchDisableStudantsById([FromRoute]long id)
     {
         var student=_alunoService.Disable(id);

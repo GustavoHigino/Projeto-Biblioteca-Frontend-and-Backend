@@ -18,22 +18,22 @@ namespace projetobiblioteca.Servicos.Implementation
 
         public Task<PaginationClass<T>> PagedList(int ItensPage, long pageCurrently)
         {
-            return PagedList(ItensPage, pageCurrently);
+            return _repositoryGeneric.PagedList(ItensPage, pageCurrently);
         }
 
         public IQueryable<T> Show()
         {
-            return Show();
+            return _repositoryGeneric.Show();
         }
 
         public T ShowById(long id)
         {
-            return ShowById(id);
+            return _repositoryGeneric.ShowById(id);
         }
 
         public T Update(T entity)
         {
-            return Update(entity);
+            return _repositoryGeneric.Update(entity);
         }
     }
 }

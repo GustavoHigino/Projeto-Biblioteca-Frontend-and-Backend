@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using projetobiblioteca.Data.DTO;
+using projetobiblioteca.Data.DTO.User;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 using projetobiblioteca.Tools.Bearer;
@@ -13,11 +13,14 @@ namespace projetobiblioteca.Controllers
     {
         private readonly IUserService _userService;
         private readonly IPasswordHasherService _passwordHasher;
+        private readonly ILogger<AuthController> _logger;
         public AuthController(
             IUserService userService,
-            ITokenGenerator tokenGenerator,
-            IPasswordHasherService passwordHasher)
+
+            IPasswordHasherService passwordHasher,
+            ILogger<AuthController> logger)
         {
+            _logger = logger;
             _passwordHasher = passwordHasher;
             _userService = userService;
         }
@@ -30,11 +33,15 @@ namespace projetobiblioteca.Controllers
         }
         [HttpPost("register")]
         [AllowAnonymous]
-        public IActionResult Register(Users user)
+        public IActionResult Register(RegisterUser user)
         {
-            user.PasswordHash = _passwordHasher
-                .Hash(user.PasswordHash);
-            var registerUser = _userService.Add(user);
+            var userWithHash = user with
+            {Password=
+                _passwordHasher
+                .Hash(user.Password)
+            };
+            var registerUser =
+                _userService.Add(userWithHash);
             return Ok(registerUser);
             
         }

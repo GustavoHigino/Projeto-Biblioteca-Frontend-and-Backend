@@ -30,6 +30,7 @@ namespace projetobiblioteca.Model
         [Column("refreshtokenexpirytime",
             TypeName ="datetime2")]
         public DateTime? RefreshTokenExpiryTime { get; set; }
+        public bool Enable { get; set; } = true;
 
 
     }

@@ -1,5 +1,7 @@
-﻿using projetobiblioteca.Data.DTO;
+﻿using Mapster;
+using projetobiblioteca.Data.DTO.User;
 using projetobiblioteca.Model;
+using projetobiblioteca.Pagination;
 using projetobiblioteca.Repositorios;
 using projetobiblioteca.Repositorios.Implementations;
 using projetobiblioteca.Tools.Bearer;
@@ -8,19 +10,19 @@ using System.Security.Claims;
 
 namespace projetobiblioteca.Servicos.Implementation
 {
-    public class UserService : GenericService<Users>, IUserService, IGenericService<Users>
+    public class UserService : IUserService
     {
         private readonly IPasswordHasherService _passwordHasherService;
         private readonly ITokenGenerator _tokenGenerator;
         private readonly IConfiguration _configuration;
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
         public UserService(
             IUserService userService,
             IPasswordHasherService passwordHasherService,
             ITokenGenerator tokenGenerator,
             IConfiguration configuration,
             IGenericRepository<Users> repositoryGeneric,
-            UserRepository userRepository) : base(repositoryGeneric)
+            IUserRepository userRepository) 
         {
             _userRepository = userRepository;
             _passwordHasherService = passwordHasherService;
@@ -28,6 +30,35 @@ namespace projetobiblioteca.Servicos.Implementation
             _configuration = configuration;
         }
         
+        public RegisterUser Add(RegisterUser entity)
+        {
+            
+            var entityAdd =_userRepository.Add
+                (entity.Adapt<Users>());
+            return entityAdd.Adapt<RegisterUser>();
+        }
+
+        public async Task<PaginationClass<UserDto>> PagedList(int ItensPage, long pageCurrently)
+        {
+
+            var userPagined= await _userRepository.PagedList(ItensPage, pageCurrently);
+            return userPagined.Adapt<PaginationClass<UserDto>>();
+        }
+
+        public IQueryable<Users> Show()
+        {
+            return _userRepository.Show();
+        }
+
+        public Users ShowById(long id)
+        {
+            return _userRepository.ShowById(id);
+        }
+
+        public Users Update(Users entity)
+        {
+            return _userRepository.Update(entity);
+        }
 
         public Users FindByUsername(string username)
         {

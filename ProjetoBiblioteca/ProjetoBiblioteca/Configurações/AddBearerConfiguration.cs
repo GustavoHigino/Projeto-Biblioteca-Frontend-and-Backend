@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -40,6 +41,17 @@ namespace projetobiblioteca.Configurações
                             ["TokenConfiguration:Secret"]))
                     };
                 });
+                services.AddAuthorization(
+                    options=>
+                    {
+                        options.AddPolicy("Bearer",
+                            new AuthorizationPolicyBuilder
+                            ().AddAuthenticationSchemes(
+                                JwtBearerDefaults
+                                .AuthenticationScheme)
+                            .RequireAuthenticatedUser()
+                            .Build());
+                    });
             return services;
         }
         

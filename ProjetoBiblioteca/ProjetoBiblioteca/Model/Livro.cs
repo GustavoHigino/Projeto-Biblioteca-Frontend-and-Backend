@@ -8,6 +8,10 @@ namespace projetobiblioteca.Data
     [Table("livros")]
     public class Livro : ModeloBase
     {
+        public Livro()
+        {
+            Disponiveis = Estoque - Emprestados;
+        }
         [Required]
         [MaxLength(100)]
         [Column(TypeName ="varchar(100)")]
@@ -17,10 +21,11 @@ namespace projetobiblioteca.Data
         [Required]
         [MaxLength(100)]
         [Column(TypeName ="varchar(100)")]
-        public string Nome { get; set; }
+        public string Titulo { get; set; }
         [Required]
 
         public long Emprestados { get; set; }
+        public long Disponiveis { get; set; }
         
         public bool Habilitado { get; set; } = true;
         public ICollection<EmprestimoAlunos> EmprestimosAluno 

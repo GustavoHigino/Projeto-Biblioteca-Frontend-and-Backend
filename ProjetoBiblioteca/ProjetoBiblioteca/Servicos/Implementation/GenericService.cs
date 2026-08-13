@@ -1,4 +1,5 @@
-﻿using projetobiblioteca.Model.Base;
+﻿using Mapster;
+using projetobiblioteca.Model.Base;
 using projetobiblioteca.Pagination;
 using projetobiblioteca.Repositorios;
 
@@ -6,13 +7,14 @@ namespace projetobiblioteca.Servicos.Implementation
 {
     public class GenericService<T> : IGenericService<T> where T : ModeloBase
     {
-        private readonly IGenericRepository<T> _repositoryGeneric;
+        private readonly IGenericRepository<T,T2> _repositoryGeneric;
         public GenericService(IGenericRepository<T> repositoryGeneric)
         {
             _repositoryGeneric=repositoryGeneric;
         }
-        public T Add(T entity)
-        {
+        public T Add(T entity,T2 T2Entity)
+        {//registerUsers
+            entity.Adapt<T2>
             return _repositoryGeneric.Add(entity);
         }
 

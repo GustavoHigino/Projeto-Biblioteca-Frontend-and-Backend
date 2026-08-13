@@ -1,4 +1,4 @@
-﻿namespace projetobiblioteca.Data.DTO
+﻿namespace projetobiblioteca.Data.DTO.User
 {
     public class TokenDto
     {

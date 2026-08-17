@@ -8,7 +8,7 @@ namespace projetobiblioteca.Configurações
 {
     public static class AddMappingConfiguration
     {
-        public static IServiceCollection RegisterMaps(
+        public static IServiceCollection AddMappingConfig(
             this IServiceCollection services)
         {
             MapperConfiguringDto.ConfigureMappings();

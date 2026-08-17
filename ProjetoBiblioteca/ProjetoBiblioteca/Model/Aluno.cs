@@ -1,12 +1,14 @@
-﻿using projetobiblioteca.Model;
+﻿using projetobiblioteca.HATEOAS.Abstract;
+using projetobiblioteca.HATEOAS.Filters;
+using projetobiblioteca.Model;
 using projetobiblioteca.Model.Base;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace projetobiblioteca.Data
+namespace projetobiblioteca.Model
 {
     [Table("alunos")]
-    public class Aluno : ModeloBase
+    public class Aluno : ModeloBase,ISupportsHypermedia
     {
         [Required]
         [MaxLength(100)]
@@ -37,6 +39,7 @@ namespace projetobiblioteca.Data
         public DateTime Nascimento { get; set; }
 
         public bool Habilitado { get; set; } = true;
+        public List<HypermediaLink> Links { get; set; } = [];
         public ICollection<EmprestimoAlunos> EmprestimosAluno { get; set; } = new List<EmprestimoAlunos>();
 
     }

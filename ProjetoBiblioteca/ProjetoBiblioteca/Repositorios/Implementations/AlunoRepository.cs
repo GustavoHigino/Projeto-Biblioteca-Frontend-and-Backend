@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using projetobiblioteca.Context;
 using projetobiblioteca.Data;
+using projetobiblioteca.Model;
 using projetobiblioteca.Pagination;
 
 namespace projetobiblioteca.Repositorios.Implementations

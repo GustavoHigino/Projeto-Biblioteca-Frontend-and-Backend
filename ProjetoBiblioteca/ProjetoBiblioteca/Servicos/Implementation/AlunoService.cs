@@ -1,4 +1,5 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Model;
 using projetobiblioteca.Pagination;
 using projetobiblioteca.Repositorios;
 

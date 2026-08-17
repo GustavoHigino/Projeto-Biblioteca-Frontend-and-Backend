@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using projetobiblioteca.Data;
+using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
 namespace projetobiblioteca.Controllers

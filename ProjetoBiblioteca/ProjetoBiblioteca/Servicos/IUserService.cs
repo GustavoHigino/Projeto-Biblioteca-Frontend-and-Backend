@@ -14,7 +14,7 @@ namespace projetobiblioteca.Servicos
         TokenDto Refresh(TokenDto tokenDto);
         public RegisterUser Add(RegisterUser entity);
 
-        public async Task<PaginationClass<UserDto>> PagedList(int ItensPage, long pageCurrently);
+        public Task<PaginationClass<UserDto>> PagedList(int ItensPage, long pageCurrently);
 
         public IQueryable<Users> Show();
 

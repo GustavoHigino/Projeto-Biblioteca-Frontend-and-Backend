@@ -1,4 +1,5 @@
 ﻿using projetobiblioteca.Data;
+using projetobiblioteca.Model;
 using projetobiblioteca.Repositorios;
 
 namespace projetobiblioteca.Servicos.Implementation

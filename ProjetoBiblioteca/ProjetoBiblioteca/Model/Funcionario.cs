@@ -3,7 +3,7 @@ using projetobiblioteca.Model.Base;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace projetobiblioteca.Data
+namespace projetobiblioteca.Model
 {
     [Table("funcionarios")]
     public class Funcionario : ModeloBase

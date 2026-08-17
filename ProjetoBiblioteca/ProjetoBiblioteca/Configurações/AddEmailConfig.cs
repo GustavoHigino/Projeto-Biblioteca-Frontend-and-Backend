@@ -2,7 +2,7 @@
 
 namespace projetobiblioteca.Configurações
 {
-    public class AddEmailConfig
+    public static class AddEmailConfig
     {
         public static IServiceCollection
             AddEmailConfiguration(

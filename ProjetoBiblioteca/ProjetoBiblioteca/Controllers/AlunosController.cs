@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
+using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
 namespace ProjetoBiblioteca.Controllers;

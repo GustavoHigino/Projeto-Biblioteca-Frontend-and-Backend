@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using projetobiblioteca.Context;
 
@@ -11,9 +12,11 @@ using projetobiblioteca.Context;
 namespace projetobiblioteca.Migrations
 {
     [DbContext(typeof(MSSQL))]
-    partial class MSSQLModelSnapshot : ModelSnapshot
+    [Migration("20260818132606_AddMigrationUsers")]
+    partial class AddMigrationUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

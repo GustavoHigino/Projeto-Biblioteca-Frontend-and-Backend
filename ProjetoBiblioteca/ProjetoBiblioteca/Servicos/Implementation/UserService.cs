@@ -17,11 +17,10 @@ namespace projetobiblioteca.Servicos.Implementation
         private readonly IConfiguration _configuration;
         private readonly IUserRepository _userRepository;
         public UserService(
-            IUserService userService,
+            
             IPasswordHasherService passwordHasherService,
             ITokenGenerator tokenGenerator,
             IConfiguration configuration,
-            IGenericRepository<Users> repositoryGeneric,
             IUserRepository userRepository) 
         {
             _userRepository = userRepository;

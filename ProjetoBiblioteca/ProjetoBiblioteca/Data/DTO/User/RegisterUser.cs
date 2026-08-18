@@ -1,6 +1,6 @@
 ﻿namespace projetobiblioteca.Data.DTO.User
 {
-    public record RegisterUser(string Username, string FullName,
-        string Password);
+    public record RegisterUser(string Username, string Fullname,
+        string PasswordHash);
     
 }

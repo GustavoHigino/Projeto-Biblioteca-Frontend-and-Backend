@@ -22,9 +22,17 @@
     <PackageReference Include="Microsoft.OpenApi" Version="2.9.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="QuestPDF" Version="2026.7.3" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.16.20" />
     <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="10.0.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\DTO\Livro\" />
+    <Folder Include="Data\DTO\Funcionario\" />
+    <Folder Include="Data\DTO\EmprestimoFuncionario\" />
+    <Folder Include="Data\DTO\EmprestimoAluno\" />
   </ItemGroup>
 
 </Project>

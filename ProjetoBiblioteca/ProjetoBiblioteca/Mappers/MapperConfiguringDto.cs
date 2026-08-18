@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using projetobiblioteca.Data.DTO.Aluno;
 using projetobiblioteca.Data.DTO.User;
 using projetobiblioteca.Model;
 using projetobiblioteca.Pagination;
@@ -16,9 +17,9 @@ namespace projetobiblioteca.Mappers
             TypeAdapterConfig<RegisterUser, Users>
                 .NewConfig()
                 .Map(dest => dest.PasswordHash,
-                src => src.Password)
+                src => src.PasswordHash)
                 .Map(dest => dest.Fullname,
-                src => src.FullName)
+                src => src.Fullname)
                 .Map(dest => dest.Username,
                 src => src.Username).TwoWays();
 
@@ -27,7 +28,9 @@ namespace projetobiblioteca.Mappers
                 .Map(dest => dest.Username,
                 src => src.Username)
                 .Map(dest => dest.PasswordHash,
-                src => src.Password).TwoWays();
+                src => src.PasswordHash).TwoWays();
+            
+                
         }
     }
 }

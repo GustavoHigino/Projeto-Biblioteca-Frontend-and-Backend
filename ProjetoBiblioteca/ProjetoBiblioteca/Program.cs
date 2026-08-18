@@ -13,11 +13,12 @@ using projetobiblioteca.Tools.Bearer.Implementation;
 var builder = WebApplication.CreateBuilder(args);
 builder.AddLoggingSerilog();
 
+
 builder.Services.AddBearerConfig(builder.Configuration);
 builder.Services.AddHATEOASConfig();
 builder.Services.AddCorsConfig(builder.Configuration);
 builder.Services.AddEmailConfiguration(builder.Configuration);
-builder.Services.AddEvolveConfiguration(builder.Configuration,builder.Environment);
+//builder.Services.AddEvolveConfiguration(builder.Configuration,builder.Environment);
 builder.Services.AddRouteConfiguration();
 builder.Services.AddMappingConfig();
 builder.Services.AddScoped(typeof(IGenericService<>),typeof( GenericService<>));
@@ -39,7 +40,6 @@ builder.Services.AddScoped<IEmprestimoFuncionarioRepository, EmprestimoFuncionar
 builder.Services.AddScoped<IEmprestimoAlunoRepository, EmprestimoAlunoRepository>();
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 builder.Services.AddScoped<HypermediaFilterOptions>();
-builder.Services.AddScoped<IServiceProvider, ServiceProvider>();
 
 // Add services to the container.
 
@@ -59,11 +59,18 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
-app.UseHttpsRedirection();
-
+app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseCorsConfiguration(builder.Configuration);
 app.MapControllers();
+
+app.UseHATEOASRoutes();
+app.UseScalarConfiguration();
 
 app.Run();

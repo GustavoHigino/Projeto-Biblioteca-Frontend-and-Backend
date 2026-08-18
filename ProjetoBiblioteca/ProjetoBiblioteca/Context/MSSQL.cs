@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using projetobiblioteca.Data;
+using projetobiblioteca.HATEOAS.Filters;
 using projetobiblioteca.Model;
 
 namespace projetobiblioteca.Context
@@ -19,6 +20,7 @@ namespace projetobiblioteca.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Ignore<HypermediaLink>();
             modelBuilder.Entity<EmprestimoAlunos>()
                 .HasOne(e => e.Livro)
                 .WithMany(e => e.EmprestimosAluno)

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
+using projetobiblioteca.Data.DTO.Aluno;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -50,7 +51,7 @@ public class AlunosController : ControllerBase
         return Ok(student);
     }
     [HttpPost]
-    public IActionResult AddNewStudents([FromBody]Aluno aluno)
+    public IActionResult AddNewStudents([FromBody]AlunoDto aluno)
     {
 
         if(aluno == null)

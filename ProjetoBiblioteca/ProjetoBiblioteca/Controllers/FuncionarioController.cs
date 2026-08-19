@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using projetobiblioteca.Data;
+using projetobiblioteca.Data.DTO.Funcionario;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -60,7 +61,7 @@ namespace projetobiblioteca.Controllers
             return Ok(FuncionarioById);
         }
         [HttpPost]
-        public IActionResult Add([FromBody] Funcionario employee)
+        public IActionResult Add([FromBody] FuncionarioDto employee)
         {
             _logger.LogInformation("trying add an employee");
             var employeeAdd = _service.Add(employee);
@@ -73,7 +74,7 @@ namespace projetobiblioteca.Controllers
             return Ok(employeeAdd);
         }
         [HttpPut]
-        public IActionResult Put([FromBody] Funcionario employee)
+        public IActionResult Put([FromBody] FuncionarioDto employee)
         {
             _logger.LogInformation($"trying make an Upgrade in these {employee.Id} employee");
             var employeeUpgrade=_service.Update(employee);

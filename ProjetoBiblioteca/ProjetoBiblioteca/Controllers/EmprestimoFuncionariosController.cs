@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using projetobiblioteca.Data.DTO.EmprestimoFuncionario;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -46,7 +47,7 @@ namespace projetobiblioteca.Controllers
             return Ok(emprestimoFuncionarioById);
         }
         [HttpPost]
-        public IActionResult EmprestimoFuncionarioAdd([FromBody]EmprestimoFuncionario emprestimoFuncionario)
+        public IActionResult EmprestimoFuncionarioAdd([FromBody]EmprestimoFuncionarioDto emprestimoFuncionario)
         {
             _logger.LogInformation("trying add a loan student");
             var emprestimoFuncionarioAdd = _service.Add(emprestimoFuncionario);
@@ -59,7 +60,7 @@ namespace projetobiblioteca.Controllers
             return Ok(emprestimoFuncionarioAdd);
         }
         [HttpPut]
-        public IActionResult EmprestimoFuncionarioUpdate([FromBody]EmprestimoFuncionario emprestimoFuncionario)
+        public IActionResult EmprestimoFuncionarioUpdate([FromBody]EmprestimoFuncionarioDto emprestimoFuncionario)
         {
             _logger.LogInformation("trying modified a loan student");
             var emprestimoFuncionarioUpdate = _service.Update(emprestimoFuncionario);

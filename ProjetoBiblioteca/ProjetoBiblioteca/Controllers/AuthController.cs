@@ -36,9 +36,9 @@ namespace projetobiblioteca.Controllers
         public IActionResult Register(RegisterUser user)
         {
             var userWithHash = user with
-            {Password=
+            {PasswordHash=
                 _passwordHasher
-                .Hash(user.Password)
+                .Hash(user.PasswordHash)
             };
             var registerUser =
                 _userService.Add(userWithHash);

@@ -11,14 +11,14 @@ namespace projetobiblioteca.Model
     {
         public Livro()
         {
-            Disponiveis = Estoque - Emprestados;
+            
         }
         [Required]
         [MaxLength(100)]
         [Column(TypeName ="varchar(100)")]
         public string Autor { get; set; }
         [Required]
-        public long Estoque {  get; set; }
+        public long Estoque { get; set; }
         [Required]
         [MaxLength(100)]
         [Column(TypeName ="varchar(100)")]
@@ -26,7 +26,9 @@ namespace projetobiblioteca.Model
         [Required]
 
         public long Emprestados { get; set; }
-        public long Disponiveis { get; set; }
+        [NotMapped]
+        public long Disponiveis =>
+        Estoque - Emprestados;
         
         public bool Habilitado { get; set; } = true;
         public ICollection<EmprestimoAlunos> EmprestimosAluno 

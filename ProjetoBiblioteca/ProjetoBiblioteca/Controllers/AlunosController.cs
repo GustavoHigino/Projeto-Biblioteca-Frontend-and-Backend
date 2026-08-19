@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
 using projetobiblioteca.Data.DTO.Aluno;
+using projetobiblioteca.HATEOAS.Filters;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -65,7 +66,7 @@ public class AlunosController : ControllerBase
         return Ok(student);
     }
     [HttpPut]
-    public IActionResult UpgradeStudentsById([FromBody]Aluno aluno)
+    public IActionResult UpgradeStudentsById([FromBody]AlunoDto aluno)
     {
         var student = _alunoService.Update(aluno);
         if(student == null)

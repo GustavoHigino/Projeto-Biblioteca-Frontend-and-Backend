@@ -35,8 +35,9 @@ namespace projetobiblioteca.Model
         [Column(TypeName = "varchar(80)")]
         public string Email { get; set; }
         [Required]
-        [Column(TypeName ="date")]
+        [Column(TypeName ="date")]//"1995-05-20"
         public DateTime Nascimento { get; set; }
+         
 
         public bool Habilitado { get; set; } = true;
         public List<HypermediaLink> Links { get; set; } = [];

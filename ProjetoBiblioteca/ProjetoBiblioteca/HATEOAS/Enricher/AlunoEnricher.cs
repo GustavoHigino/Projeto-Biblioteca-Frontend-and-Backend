@@ -15,13 +15,16 @@ namespace projetobiblioteca.HATEOAS.Enricher
         {
             var request = urlHelper
                 .ActionContext.HttpContext.Request;
+
             var baseUrl = $"{request.Scheme}://" +
                 $"{request.Host.ToUriComponent()}" +
                 $"{request.PathBase.ToUriComponent()}" +
                 $"/Aluno";
+
             content.Links.AddRange(
                 GenerateLinks(
                     content.Id, baseUrl));
+
             return Task.CompletedTask;
         }
         private IEnumerable<HypermediaLink>GenerateLinks

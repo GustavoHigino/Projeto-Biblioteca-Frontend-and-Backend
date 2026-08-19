@@ -6,7 +6,7 @@ namespace projetobiblioteca.Repositorios
 {
     public interface IGenericRepository<T> where T :ModeloBase  
     {
-        Task<PaginationClass<T>> PagedList(int itensPage, long pageCurrently);
+        Task<PaginationClass<T>> PagedList(int itensPage, long pageCurrently, IQueryable<T> query = null);
         IQueryable<T> Show();
         T ShowById(long id);
         T Add(T entity);

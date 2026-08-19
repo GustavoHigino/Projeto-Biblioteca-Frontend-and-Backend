@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using projetobiblioteca.Data.DTO.EmprestimoAluno;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -19,10 +20,10 @@ namespace projetobiblioteca.Controllers
             _service = service;
         }
         [HttpGet]
-        public IActionResult ListPagined([FromQuery]int itensPage,[FromQuery] long pageCurrently)
+        public async Task<IActionResult> ListPagined([FromQuery]int itensPage,[FromQuery] long pageCurrently)
         {
             _logger.LogInformation("fetching a list pagined");
-            var listPagined = _service.PagedList(itensPage, pageCurrently);
+            var listPagined = await _service.PagedList(itensPage, pageCurrently);
             if (listPagined == null)
             {
                 _logger.LogWarning("list pagined not found");
@@ -45,7 +46,7 @@ namespace projetobiblioteca.Controllers
             return Ok(getById);
         }
         [HttpPost]
-        public IActionResult Add([FromBody] EmprestimoAlunos emprestimoAlunos)
+        public IActionResult Add([FromBody] EmprestimoAlunoDto emprestimoAlunos)
         {
             _logger.LogInformation("add an employee loan");
             var emprestimoAlunosAdd = _service.Add(emprestimoAlunos);
@@ -58,7 +59,7 @@ namespace projetobiblioteca.Controllers
             return Ok(emprestimoAlunosAdd);
         }
         [HttpPut]
-        public IActionResult Update([FromBody] EmprestimoAlunos emprestimoAluno)
+        public IActionResult Update([FromBody] EmprestimoAlunoDto emprestimoAluno)
         {
             _logger.LogInformation("modifing some data about the employee loan");
             var emprestimoAlunosUpdate = _service.Update(emprestimoAluno);

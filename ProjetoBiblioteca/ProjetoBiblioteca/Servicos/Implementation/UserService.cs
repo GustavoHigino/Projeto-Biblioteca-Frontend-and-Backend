@@ -93,7 +93,7 @@ namespace projetobiblioteca.Servicos.Implementation
                 return null;
             }
             if (!_passwordHasherService
-                .Verify(userDto.Password
+                .Verify(userDto.PasswordHash
                 , user.PasswordHash))
             {
                 return null;

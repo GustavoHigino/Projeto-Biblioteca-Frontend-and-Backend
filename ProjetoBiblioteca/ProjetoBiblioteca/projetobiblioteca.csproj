@@ -28,11 +28,4 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\DTO\Livro\" />
-    <Folder Include="Data\DTO\Funcionario\" />
-    <Folder Include="Data\DTO\EmprestimoFuncionario\" />
-    <Folder Include="Data\DTO\EmprestimoAluno\" />
-  </ItemGroup>
-
 </Project>

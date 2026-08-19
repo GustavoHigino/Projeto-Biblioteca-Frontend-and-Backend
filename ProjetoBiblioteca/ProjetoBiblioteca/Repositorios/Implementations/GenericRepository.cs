@@ -51,11 +51,13 @@ namespace projetobiblioteca.Repositorios.Implementations
             return entityFinded;
         }
 
-        public async Task<PaginationClass<T>> PagedList(int itensPage, long pageCurrently)
+        public async Task<PaginationClass<T>> PagedList(int itensPage, long pageCurrently,IQueryable<T> query=null)
         {
+            query ??= Show();
             var totalItems = await _context.Set<T>().AsNoTracking().CountAsync();
-            var paginedList = new PaginationClass<T>(totalItems, itensPage, pageCurrently,
-                Show().AsNoTracking().OrderBy(s=>s.Id));
+            var paginedList = await PaginationClass<T>.CreateAsync(totalItems,itensPage,pageCurrently,query
+                );
+           
             return paginedList;
         }
     }

@@ -9,6 +9,7 @@ using projetobiblioteca.Servicos;
 using projetobiblioteca.Servicos.Implementation;
 using projetobiblioteca.Tools.Bearer;
 using projetobiblioteca.Tools.Bearer.Implementation;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddLoggingSerilog();
@@ -21,7 +22,6 @@ builder.Services.AddEmailConfiguration(builder.Configuration);
 //builder.Services.AddEvolveConfiguration(builder.Configuration,builder.Environment);
 builder.Services.AddRouteConfiguration();
 builder.Services.AddMappingConfig();
-builder.Services.AddScoped(typeof(IGenericService<>),typeof( GenericService<>));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ILivroService, LivroService>();
@@ -39,14 +39,20 @@ builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddScoped<IEmprestimoFuncionarioRepository, EmprestimoFuncionarioRepository>();
 builder.Services.AddScoped<IEmprestimoAlunoRepository, EmprestimoAlunoRepository>();
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
-builder.Services.AddScoped<HypermediaFilterOptions>();
+//builder.Services.AddScoped<HypermediaFilterOptions>();
 
 // Add services to the container.
 
 builder.Services.AddControllers(options=>
 {
     options.Filters.Add<HypermediaFilter>();
-});
+})
+    .AddJsonOptions(options=>
+    {
+        options.JsonSerializerOptions.ReferenceHandler =
+        ReferenceHandler.IgnoreCycles;
+    })
+    ;
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddContextDatabase(

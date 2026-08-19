@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
+using projetobiblioteca.Data.DTO.Livro;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -23,7 +24,7 @@ namespace projetobiblioteca.Controllers
         public async Task<IActionResult> GetPagined([FromQuery]int itensPage,[FromQuery]long pageCurrently)
         {
             _logger.LogInformation("trying to fetch books");
-            var paginedList=_service.PagedList(itensPage,pageCurrently);
+            var paginedList=await _service.PagedList(itensPage,pageCurrently);
             if (paginedList == null)
             {
                 _logger.LogWarning("Something wrong in to fetch books");
@@ -47,7 +48,7 @@ namespace projetobiblioteca.Controllers
             return Ok(livroById);
         }
         [HttpPost]
-        public IActionResult Add([FromBody]Livro book)
+        public IActionResult Add([FromBody]LivroDto book)
         {
             _logger.LogInformation("trying add a book in a dataBase");
             var livroAdd = _service.Add(book);
@@ -60,7 +61,7 @@ namespace projetobiblioteca.Controllers
             return Ok(livroAdd);
         }
         [HttpPut]
-        public IActionResult Put([FromBody] Livro book)
+        public IActionResult Put([FromBody] LivroDto book)
         {
             _logger.LogInformation("attempt update a book");
             var bookUpgrade= _service.Update(book);

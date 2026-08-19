@@ -31,6 +31,7 @@ namespace projetobiblioteca.HATEOAS.Utilis
 
         public async Task Enrich(ResultExecutingContext context)
         {
+
             var urlHelper = new
                 UrlHelperFactory().GetUrlHelper
                 (context);

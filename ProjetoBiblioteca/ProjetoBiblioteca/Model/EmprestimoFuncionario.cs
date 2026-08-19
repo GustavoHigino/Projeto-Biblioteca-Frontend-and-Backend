@@ -15,11 +15,11 @@ namespace projetobiblioteca.Model
         [Required]
         public long IdLivro { get; set; }
         [Required]
-        [Column(TypeName ="date")]
-        public DateTime Inicio { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Inicio { get; set; } = DateTime.UtcNow;
         [Required]
         [Column(TypeName ="date")]
-        public DateTime Fim { get; set; }
+        public DateTime Fim { get; set; }=DateTime.UtcNow.AddDays(7);
         [Required]
         public bool Devolvido { get; set; } = false;
         [ForeignKey(nameof(IdFuncionario))]

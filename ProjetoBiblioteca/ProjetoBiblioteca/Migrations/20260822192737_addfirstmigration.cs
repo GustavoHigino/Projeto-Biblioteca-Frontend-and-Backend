@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace projetobiblioteca.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class addfirstmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,13 +59,34 @@ namespace projetobiblioteca.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Autor = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Estoque = table.Column<long>(type: "bigint", nullable: false),
-                    Nome = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Titulo = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Emprestados = table.Column<long>(type: "bigint", nullable: false),
+                    Disponiveis = table.Column<long>(type: "bigint", nullable: false),
                     Habilitado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_livros", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Fullname = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    passwordhash = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
+                    refreshtoken = table.Column<string>(type: "varchar(300)", maxLength: 500, nullable: true),
+                    refreshtokenexpirytime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Enable = table.Column<bool>(type: "bit", nullable: false),
+                    Key = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
+                    email = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -140,6 +161,12 @@ namespace projetobiblioteca.Migrations
                 name: "IX_EmprestimosFuncionarios_IdFuncionario",
                 table: "EmprestimosFuncionarios",
                 column: "IdFuncionario");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -150,6 +177,9 @@ namespace projetobiblioteca.Migrations
 
             migrationBuilder.DropTable(
                 name: "EmprestimosFuncionarios");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "alunos");

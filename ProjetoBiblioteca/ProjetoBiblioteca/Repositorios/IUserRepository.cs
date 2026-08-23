@@ -6,5 +6,6 @@ namespace projetobiblioteca.Repositorios
     {
         public Users FindByUserName(string username);
         public bool RevokeToken(string username);
+        public Users FindByKey(string key);
     }
 }

@@ -35,6 +35,7 @@ namespace projetobiblioteca.Model
         [Required]
         [Column(TypeName ="date")]
         public DateTime Nascimento { get; set; }
+        public int Emprestimos { get; set; } = 0;
 
         public bool Habilitado { get; set; } = true;
         public ICollection<EmprestimoFuncionario> EmprestimoFuncionario

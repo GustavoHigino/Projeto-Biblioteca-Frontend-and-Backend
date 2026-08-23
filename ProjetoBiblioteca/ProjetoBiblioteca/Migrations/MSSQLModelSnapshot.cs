@@ -231,6 +231,12 @@ namespace projetobiblioteca.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(150)")
+                        .HasColumnName("email");
+
                     b.Property<bool>("Enable")
                         .HasColumnType("bit");
 
@@ -239,6 +245,12 @@ namespace projetobiblioteca.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)")
                         .HasColumnName("Fullname");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)")
+                        .HasColumnName("Key");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()

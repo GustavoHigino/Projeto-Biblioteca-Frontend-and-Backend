@@ -66,7 +66,7 @@ namespace projetobiblioteca.Mail
                 _data.Subject ?? "No subject";
             var builder = new BodyBuilder
             {
-                TextBody = _body ?? _data.Message ?? ""
+                HtmlBody = _body ?? _data.Message ?? ""
             };
             if(!string.IsNullOrWhiteSpace
                 (_attachment))

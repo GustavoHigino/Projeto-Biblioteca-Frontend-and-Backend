@@ -36,7 +36,7 @@ namespace projetobiblioteca.Controllers
         public IActionResult GetById([FromRoute]long id)
         {
             _logger.LogInformation("fetching a employee loam by Id");
-            var getById = _service.ShowById(id);
+            var getById = _service.FindByIdQuery(id);
             if (getById == null)
             {
                 _logger.LogWarning("employee loan not found");

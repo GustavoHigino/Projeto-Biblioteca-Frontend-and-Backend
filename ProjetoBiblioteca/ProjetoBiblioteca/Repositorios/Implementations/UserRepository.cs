@@ -10,6 +10,15 @@ namespace projetobiblioteca.Repositorios.Implementations
         {
         }
 
+  
+        
+
+        public Users FindByKey(string key)
+        {
+            var user =_context.Users.FirstOrDefault(u => u.Key == key);
+            return user;
+        }
+
         public Users FindByUserName(string username)
         {
             var user=_context.Users.FirstOrDefault

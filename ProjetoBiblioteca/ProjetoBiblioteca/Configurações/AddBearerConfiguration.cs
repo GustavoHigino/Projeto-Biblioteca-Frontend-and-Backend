@@ -40,6 +40,20 @@ namespace projetobiblioteca.Configurações
                             (configuration
                             ["TokenConfiguration:Secret"]))
                     };
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
+                        {
+                            if (context.Request
+                            .Cookies.TryGetValue
+                            ("X-Access-Token",
+                            out var token))
+                            {
+                                context.Token = token;
+                            }
+                            return Task.CompletedTask;
+                        }
+                    };
                 });
                 services.AddAuthorization(
                     options=>

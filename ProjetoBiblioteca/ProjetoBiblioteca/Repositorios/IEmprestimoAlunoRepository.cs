@@ -7,6 +7,6 @@ namespace projetobiblioteca.Repositorios
     {
         EmprestimoAlunos Returned(long id);
         EmprestimoAlunos NotReturned(long id);
-        
+
     }
 }

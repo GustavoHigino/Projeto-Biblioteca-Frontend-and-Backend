@@ -14,6 +14,7 @@ namespace projetobiblioteca.Servicos
         public FuncionarioDto Update(FuncionarioDto accept);
         Funcionario Enable(long id);
         Funcionario Disable(long id);
-         
+        Funcionario FindByIdQuery(long id);
+
     }
 }

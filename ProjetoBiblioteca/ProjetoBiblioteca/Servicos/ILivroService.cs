@@ -14,5 +14,6 @@ namespace projetobiblioteca.Servicos
         public LivroDto Update(LivroDto accept);
         Livro Enable(long id);
         Livro Disable(long id);
+        Livro FindByIdQuery(long id);
     }
 }

@@ -30,7 +30,15 @@ namespace projetobiblioteca.Model
         [Column("refreshtokenexpirytime",
             TypeName ="datetime2")]
         public DateTime? RefreshTokenExpiryTime { get; set; }
-        public bool Enable { get; set; } = true;
+        public bool Enable { get; set; } = false;
+        [MaxLength(500)]
+        [Column("Key",TypeName ="varchar(500)")]
+        public string Key { get; set; }
+        [Required]
+        [MaxLength(150)]
+        [EmailAddress]
+        [Column("email",TypeName ="varchar(150)")]
+        public string Email { get; set; }
 
 
     }

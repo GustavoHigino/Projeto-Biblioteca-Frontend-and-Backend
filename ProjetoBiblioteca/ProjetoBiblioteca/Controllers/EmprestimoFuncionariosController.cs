@@ -37,7 +37,7 @@ namespace projetobiblioteca.Controllers
         public IActionResult GetbyId([FromRoute]long id)
         {
             _logger.LogInformation("fetching an loan student by ID");
-            var emprestimoFuncionarioById=_service.ShowById(id);
+            var emprestimoFuncionarioById=_service.FindByIdQuery(id);
             if (emprestimoFuncionarioById == null)
             {
                 _logger.LogWarning("loan student not found");

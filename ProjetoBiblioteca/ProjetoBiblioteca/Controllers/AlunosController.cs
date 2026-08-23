@@ -42,7 +42,7 @@ public class AlunosController : ControllerBase
     {
         
         _logger.LogInformation("fetching student by ID");
-        var student=_alunoService.ShowById(id);
+        var student=_alunoService.FindByIdQuery(id);
         if (student == null)
         {
             _logger.LogWarning("student non-existent");

@@ -44,6 +44,7 @@ namespace projetobiblioteca.Servicos.Implementation
 
         public Aluno ShowById(long id)
         {
+            
             return _alunoRepository.ShowById(id);
         }
 
@@ -58,6 +59,13 @@ namespace projetobiblioteca.Servicos.Implementation
         {
             var aluno=accept.Adapt<Aluno>();
             return _alunoRepository.Update(aluno).Adapt<AlunoDto>();
+        }
+
+        public Aluno FindByIdQuery(long id)
+        {
+            return Show().AsQueryable().AsNoTracking()
+                .Include(a => a.EmprestimosAluno).ThenInclude(a => a.Livro)
+                .FirstOrDefault(a => a.Id == id);
         }
     }
 }

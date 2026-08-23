@@ -14,5 +14,6 @@ namespace projetobiblioteca.Servicos
 
         EmprestimoAlunos Returned(long id);
         EmprestimoAlunos NotReturned(long id);
+        EmprestimoAlunos  FindByIdQuery(long id);
     }
 }

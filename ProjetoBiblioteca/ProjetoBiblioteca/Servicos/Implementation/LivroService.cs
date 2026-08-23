@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using projetobiblioteca.Data;
 using projetobiblioteca.Data.DTO.Livro;
 using projetobiblioteca.Model;
@@ -28,6 +29,8 @@ namespace projetobiblioteca.Servicos.Implementation
 
         public Task<PaginationClass<Livro>> PagedList(int ItensPage, long pageCurrently)
         {
+            var query = Show().AsQueryable().AsNoTracking()
+                .Include(a => a.EmprestimosAluno).Include(a => a.EmprestimosFuncionario);
             return _repositoryLivro.PagedList(ItensPage, pageCurrently);
         }
 
@@ -44,6 +47,7 @@ namespace projetobiblioteca.Servicos.Implementation
         public LivroDto Add(LivroDto accept)
         {
             var livro = accept.Adapt<Livro>();
+            livro.Disponiveis = livro.Estoque - livro.Emprestados;
             return _repositoryLivro.Add(livro).Adapt<LivroDto>();
         }
 
@@ -51,6 +55,14 @@ namespace projetobiblioteca.Servicos.Implementation
         {
             var livro = accept.Adapt<Livro>();
             return _repositoryLivro.Update(livro).Adapt<LivroDto>();
+        }
+
+        public Livro FindByIdQuery(long id)
+        {
+            return Show().AsNoTracking().AsQueryable()
+                .Include(l => l.EmprestimosAluno)
+                .Include(l => l.EmprestimosFuncionario)
+                .FirstOrDefault(l => l.Id == id);
         }
     }
 }

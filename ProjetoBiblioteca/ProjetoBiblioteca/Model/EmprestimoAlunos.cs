@@ -23,7 +23,7 @@ namespace projetobiblioteca.Model
         [Required]
         public bool Devolvido { get; set; } = false;
         [ForeignKey(nameof(IdAluno))]
-        [JsonIgnore]
+        
         public Aluno Aluno { get; set; }
         [ForeignKey(nameof(IdLivro))]
         public Livro Livro { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.IdentityModel.Tokens;
 using projetobiblioteca.Data.DTO.User;
 using projetobiblioteca.Model;
 using projetobiblioteca.Pagination;
@@ -7,6 +8,7 @@ using projetobiblioteca.Repositorios.Implementations;
 using projetobiblioteca.Tools.Bearer;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace projetobiblioteca.Servicos.Implementation
 {
@@ -28,13 +30,17 @@ namespace projetobiblioteca.Servicos.Implementation
             _tokenGenerator = tokenGenerator;
             _configuration = configuration;
         }
+
         
-        public RegisterUser Add(RegisterUser entity)
+        public Users Add(RegisterUser entity)
         {
-            
+            var changeEntity = entity.Adapt<Users>();
+            changeEntity.Key= GenerateEmailConfirmationToken(changeEntity.Username);
             var entityAdd =_userRepository.Add
-                (entity.Adapt<Users>());
-            return entityAdd.Adapt<RegisterUser>();
+                (changeEntity);
+           
+            
+            return entityAdd;
         }
 
         public async Task<PaginationClass<UserDto>> PagedList(int ItensPage, long pageCurrently)
@@ -140,6 +146,45 @@ namespace projetobiblioteca.Servicos.Implementation
             };
         }
 
+        public string GenerateEmailConfirmationToken(string username )
+        {
+            var tokenHandler = 
+                new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes
+                ("Sua_Chave_Ultra_Mega_E_Longa_E_Segura_Super_Secreta_Aqui");
+            var tokenDescriptor = new
+                SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim("username",username),
+                    new Claim("purpose","email_confirmation")
+                }),
+                Expires = DateTime.UtcNow.AddHours(24),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
 
+        public Users ShowByKey(string key)
+        {
+            return _userRepository.FindByKey(key);
+        }
+
+        public Users Enable(string key)
+        {
+            var user=ShowByKey(key);
+            if (user == null)
+            {
+                return null;
+            }
+            user.Key = "verificado";
+            user.Enable = true;
+            var userUpdate=Update(user);
+            return userUpdate;
+        }
     }
 }

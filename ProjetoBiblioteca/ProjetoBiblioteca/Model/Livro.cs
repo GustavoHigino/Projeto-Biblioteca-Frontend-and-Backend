@@ -25,10 +25,10 @@ namespace projetobiblioteca.Model
         public string Titulo { get; set; }
         [Required]
 
-        public long Emprestados { get; set; }
-        [NotMapped]
-        public long Disponiveis =>
-        Estoque - Emprestados;
+        public long Emprestados { get; set; } 
+        
+        public long Disponiveis { get; set; }
+      
         
         public bool Habilitado { get; set; } = true;
         public ICollection<EmprestimoAlunos> EmprestimosAluno 

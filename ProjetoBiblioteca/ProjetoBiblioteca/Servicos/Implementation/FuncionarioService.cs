@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using projetobiblioteca.Data;
 using projetobiblioteca.Data.DTO.Funcionario;
 using projetobiblioteca.Model;
@@ -27,6 +28,7 @@ namespace projetobiblioteca.Servicos.Implementation
 
         public Task<PaginationClass<Funcionario>> PagedList(int ItensPage, long pageCurrently)
         {
+            var query = Show().AsQueryable().AsNoTracking().Include(a=> a.EmprestimoFuncionario).ThenInclude(a=> a.Livro);
             return _funcionarioRepository.PagedList(ItensPage, pageCurrently);
         }
 
@@ -50,6 +52,14 @@ namespace projetobiblioteca.Servicos.Implementation
         {
             var funcionario = accept.Adapt<Funcionario>();
             return _funcionarioRepository.Update(funcionario).Adapt<FuncionarioDto>();
+        }
+
+        public Funcionario FindByIdQuery(long id)
+        {
+            return Show().AsQueryable().AsNoTracking()
+                .Include(f => f.EmprestimoFuncionario)
+                .ThenInclude(e => e.Livro)
+                .FirstOrDefault(p => p.Id == id);
         }
     }
 }

@@ -37,8 +37,9 @@ namespace projetobiblioteca.Model
         [Required]
         [Column(TypeName ="date")]//"1995-05-20"
         public DateTime Nascimento { get; set; }
-         
+        public int Emprestimos { get; set; } = 0;
 
+        
         public bool Habilitado { get; set; } = true;
         public List<HypermediaLink> Links { get; set; } = [];
         public ICollection<EmprestimoAlunos> EmprestimosAluno { get; set; } = new List<EmprestimoAlunos>();

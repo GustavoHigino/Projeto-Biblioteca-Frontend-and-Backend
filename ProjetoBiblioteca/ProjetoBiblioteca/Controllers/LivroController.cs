@@ -38,7 +38,7 @@ namespace projetobiblioteca.Controllers
         {
             _logger.LogInformation($"Fetching a book by Id {id}");
 
-            var livroById = _service.ShowById(id);
+            var livroById = _service.FindByIdQuery(id);
             if(livroById == null)
             {
                 _logger.LogInformation($"Fetch Unsuccessfully by Id {id}");

@@ -13,5 +13,6 @@ namespace projetobiblioteca.Servicos
         public EmprestimoFuncionarioDto Update(EmprestimoFuncionarioDto accept);
         EmprestimoFuncionario Returned(long id);
         EmprestimoFuncionario NotReturned(long id);
+        EmprestimoFuncionario FindByIdQuery(long id);
     }
 }

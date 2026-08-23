@@ -12,7 +12,7 @@ namespace projetobiblioteca.Servicos
         public bool RevokeToken(string username);
         TokenDto ValidateCredentials(UserDto userDto);
         TokenDto Refresh(TokenDto tokenDto);
-        public RegisterUser Add(RegisterUser entity);
+        public Users Add(RegisterUser entity);
 
         public Task<PaginationClass<UserDto>> PagedList(int ItensPage, long pageCurrently);
 
@@ -21,5 +21,8 @@ namespace projetobiblioteca.Servicos
         public Users ShowById(long id);
 
         public Users Update(Users entity);
+        public string GenerateEmailConfirmationToken(string username);
+        public Users ShowByKey(string key);
+        public Users Enable(string key);
     }
 }

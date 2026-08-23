@@ -50,7 +50,7 @@ namespace projetobiblioteca.Controllers
         public IActionResult ShowById([FromRoute]long id)
         {
             _logger.LogInformation("Fetching employee by id");
-            var FuncionarioById=_service.ShowById(id);
+            var FuncionarioById=_service.FindByIdQuery(id);
             if (FuncionarioById == null)
             {
                 _logger.LogInformation("Employee not found or not existent");

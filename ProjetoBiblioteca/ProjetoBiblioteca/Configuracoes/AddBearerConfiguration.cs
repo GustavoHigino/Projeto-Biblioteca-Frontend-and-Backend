@@ -41,7 +41,7 @@ namespace projetobiblioteca.Configuracoes
                             ["TokenConfiguration:Secret"]))
                     };
                     options.Events = new JwtBearerEvents
-                    {
+                    { 
                         OnMessageReceived = context =>
                         {
                             if (context.Request

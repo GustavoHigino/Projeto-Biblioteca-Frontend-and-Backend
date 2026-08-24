@@ -36,6 +36,11 @@ namespace projetobiblioteca.Servicos.Implementation
         {
             var changeEntity = entity.Adapt<Users>();
             changeEntity.Key= GenerateEmailConfirmationToken(changeEntity.Username);
+            var found=_userRepository.FindByUserName(entity.Username);
+            if (found != null)
+            {
+                return null;
+            }
             var entityAdd =_userRepository.Add
                 (changeEntity);
            

@@ -74,6 +74,7 @@ namespace projetobiblioteca.Controllers
         [AllowAnonymous]
         public IActionResult Register(RegisterUser user)
         {
+            
             var userWithHash = user with
             {PasswordHash=
                 _passwordHasher

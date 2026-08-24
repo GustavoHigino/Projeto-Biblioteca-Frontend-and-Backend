@@ -12,9 +12,9 @@ using System.Reflection.Metadata;
 
 namespace projetobiblioteca.FileExport.Exporter.Impl
 {
-    public class PdfExporterAluno : IFileExporter<Aluno>
+    public class PdfExporterAluno<T> : IFileExporter<T>
     {
-        public FileContentResult ExportFile(IQueryable<Aluno> list)
+        public FileContentResult ExportFile(IQueryable<T> list)
         {
             QuestPDF.Settings.License = LicenseType.Community;
             var pdfBytes = QuestPDF.Fluent.Document.Create(Container =>
@@ -28,7 +28,7 @@ namespace projetobiblioteca.FileExport.Exporter.Impl
                     page.Content().Padding(10).Table
                     (table =>
                     {
-                        var type = typeof(Aluno);
+                        var type = typeof(T);
                         var properties =
                         type.GetProperties();
                         table.ColumnsDefinition(columns =>

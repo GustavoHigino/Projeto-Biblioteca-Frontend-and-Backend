@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Serilog;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddEvolve
     {

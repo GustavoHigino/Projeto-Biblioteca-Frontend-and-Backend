@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data.DTO.EmprestimoFuncionario;
+using projetobiblioteca.FileExport.Exporter.Factory;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -13,9 +14,12 @@ namespace projetobiblioteca.Controllers
     {
         private readonly ILogger<EmprestimoFuncionariosController> _logger;
         private readonly IEmprestimoFuncionarioService _service;
+        private readonly FileExporterFactory<EmprestimoFuncionario> _exporter;
         public EmprestimoFuncionariosController(ILogger<EmprestimoFuncionariosController> logger,
-            IEmprestimoFuncionarioService service)
+            IEmprestimoFuncionarioService service,
+            FileExporterFactory<EmprestimoFuncionario> exporter)
         {
+            _exporter = exporter;
             _logger = logger;
             _service = service;
         }
@@ -98,5 +102,29 @@ namespace projetobiblioteca.Controllers
             _logger.LogInformation("loan student modified successfully");
             return Ok(emprestimoFuncionarioNotReturned);
         }
+        [HttpGet("Export")]
+        public IActionResult Export
+        ([FromHeader(Name = "Accept")] string acceptHeader)
+        {
+            var query = _service.Show();
+            var exporter = _exporter.GetExporter(acceptHeader);
+            return exporter.ExportFile(query);
+        }
+        [HttpGet("Pix/{id:long}")]
+        [Produces("image/png")]
+        public IActionResult CriarPix(long id)
+        {
+            var emprestimo = _service.ShowById(id);
+            string base64=_service.CriarPix
+                 (emprestimo.ValorMulta.ToString(),
+                 emprestimo.IdFuncionario);
+            if (base64.Contains(","))
+            {
+                base64=base64.Split(',')[1];
+            }
+            byte[] imageBytes=Convert.FromBase64String(base64);
+            return File(imageBytes, "image/png");
+        }
+
     }
 }

@@ -5,6 +5,8 @@ using projetobiblioteca.Data.DTO.EmprestimoFuncionario;
 using projetobiblioteca.Data.DTO.Funcionario;
 using projetobiblioteca.Data.DTO.Livro;
 using projetobiblioteca.Model;
+using projetobiblioteca.Pagamentos.Gerador;
+using projetobiblioteca.Pagamentos.Model;
 using projetobiblioteca.Pagination;
 using projetobiblioteca.Repositorios;
 
@@ -33,6 +35,13 @@ namespace projetobiblioteca.Servicos.Implementation
             if(returned.Devolvido==true)
             {
                 return _repositoryEmprestimoFuncionario.Returned(id);
+            }
+            if (returned.Fim < DateTime.UtcNow)
+            {
+                var diasAtraso = (DateTime.UtcNow.Date - returned.Fim.Date).Days;
+                returned.ValorMulta = 50 + (diasAtraso * 1);
+                returned.Multado = true;
+                _repositoryEmprestimoFuncionario.Update(returned);
             }
             var funcionario = _funcionarioService.ShowById(returned.IdFuncionario);
             funcionario.Emprestimos = funcionario.Emprestimos + 1;
@@ -109,6 +118,29 @@ namespace projetobiblioteca.Servicos.Implementation
                 .Include(ef => ef.Funcionario)
                 .Include(ef => ef.Livro)
                 .FirstOrDefault(ef => ef.Id == id);
+        }
+        public IQueryable<EmprestimoFuncionario> FindMultados()
+        {
+            return Show().Where(a=>a.Multado).AsNoTracking().AsQueryable()
+                .Include(a=>a.Livro).Include(a=>a.Funcionario);
+        }
+        public IQueryable<EmprestimoFuncionario> FindVencidos()
+        {
+            return Show().Where(ef => ef.Fim < DateTime.UtcNow).AsNoTracking().AsQueryable()
+                .Include(a => a.Livro).Include(a => a.Funcionario);
+        }
+        public string CriarPix(string valor, long idClient)
+        {
+            var payload = GeradorPix.MontarPaylodPix
+                (new Recebedor
+                {
+                    ChavePix = Environment.GetEnvironmentVariable("Chave_Pix"),
+                    NomeRecebedor = "Narigudo",
+                    CidadeRecebedor = "Sao Paulo",
+                    ValorPix = valor,
+                    TxtId = idClient.ToString()
+                });
+            return GeradorPix.GerarImagemQRCode(payload);
         }
     }
 }

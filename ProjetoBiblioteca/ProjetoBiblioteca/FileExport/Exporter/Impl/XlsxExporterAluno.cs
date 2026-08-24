@@ -6,15 +6,15 @@ using projetobiblioteca.FileExport.Exporter.Factory;
 
 namespace projetobiblioteca.FileExport.Exporter.Impl
 {
-    public class XlsxExporterAluno<Aluno> : IFileExporter<Aluno>
+    public class XlsxExporterAluno<T> : IFileExporter<T>
     {
-        public FileContentResult ExportFile(IQueryable<Aluno> list)
+        public FileContentResult ExportFile(IQueryable<T> list)
         {
             using var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets
                 .Add("Aluno");
-            var alunos = typeof(Aluno);
-            var properties = alunos.GetProperties().
+            var t = typeof(T);
+            var properties = t.GetProperties().
                 Where(p => p.PropertyType ==
                 typeof(string) ||
                 !typeof(System.Collections.IEnumerable)
@@ -32,13 +32,13 @@ namespace projetobiblioteca.FileExport.Exporter.Impl
             headerRange.Style.Alignment.Horizontal =
                 XLAlignmentHorizontalValues.Center;
             int row = 2;
-            foreach (var aluno in list)
+            foreach (var entity in list)
             {
                 for(int col =0; col<properties.Length;
                     col++)
                 {
                     var value = properties[col]
-                        .GetValue(aluno);
+                        .GetValue(entity);
                     if(value is bool boolVal)
                     {
                         worksheet.Cell(row, col + 1)

@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data.DTO.EmprestimoAluno;
+using projetobiblioteca.FileExport.Exporter.Factory;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
+using projetobiblioteca.Servicos.Implementation;
 
 namespace projetobiblioteca.Controllers
 {
@@ -13,9 +16,12 @@ namespace projetobiblioteca.Controllers
     {
         private readonly ILogger<EmprestimoAlunosController> _logger;
         private readonly IEmprestimoAlunoService _service;
+        private readonly FileExporterFactory<EmprestimoAlunos> _exporter;
         public EmprestimoAlunosController(ILogger<EmprestimoAlunosController> logger,
-            IEmprestimoAlunoService service)
+            IEmprestimoAlunoService service,
+            FileExporterFactory<EmprestimoAlunos> exporter)
         {
+            _exporter = exporter;
             _logger = logger;
             _service = service;
         }
@@ -76,6 +82,7 @@ namespace projetobiblioteca.Controllers
         {
             _logger.LogInformation("fetching about the id of the loan employee for modifie");
             var emprestimoReturned = _service.Returned(id);
+            
             if (emprestimoReturned == null)
             {
                 _logger.LogWarning("modified for enable has been unsuccesfully");
@@ -96,6 +103,30 @@ namespace projetobiblioteca.Controllers
             }
             _logger.LogInformation("the modification to disable has been succesfully");
             return Ok(emprestimoNotReturned);
+        }
+        [HttpGet("Export")]
+        public IActionResult Export
+        ([FromHeader(Name = "Accept")] string acceptHeader)
+        {
+            var query = _service.Show();
+            var exporter = _exporter.GetExporter(acceptHeader);
+            return exporter.ExportFile(query);
+        }
+        
+        [HttpGet("Pix/{id:long}")]
+        [Produces("image/png")]
+        public IActionResult CriarPix(long id)
+        {
+            var emprestimo = _service.ShowById(id);
+            string base64 = _service.CriarPix
+                 (emprestimo.ValorMulta.ToString(),
+                 emprestimo.IdAluno);
+            if (base64.Contains(","))
+            {
+                base64 = base64.Split(',')[1];
+            }
+            byte[] imageBytes = Convert.FromBase64String(base64);
+            return File(imageBytes, "image/png");
         }
     }
 }

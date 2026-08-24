@@ -1,7 +1,7 @@
 ﻿using projetobiblioteca.HATEOAS.Enricher;
 using projetobiblioteca.HATEOAS.Filters;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddHATEOASConfiguration
     {

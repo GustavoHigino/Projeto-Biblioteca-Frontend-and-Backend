@@ -14,5 +14,6 @@ namespace projetobiblioteca.Servicos
         EmprestimoFuncionario Returned(long id);
         EmprestimoFuncionario NotReturned(long id);
         EmprestimoFuncionario FindByIdQuery(long id);
+        public string CriarPix(string valor, long idClient);
     }
 }

@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
 using projetobiblioteca.Data.DTO.Livro;
+using projetobiblioteca.FileExport.Exporter.Factory;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -14,9 +16,12 @@ namespace projetobiblioteca.Controllers
     {
         private readonly ILogger<LivroController> _logger;
         private readonly ILivroService _service;
+        private readonly FileExporterFactory<Livro> _exporter;
         public LivroController(ILogger<LivroController> logger,
-            ILivroService service)
+            ILivroService service,
+            FileExporterFactory<Livro> exporter)
         {
+            _exporter = exporter;
             _logger = logger;
             _service = service;
         }
@@ -87,17 +92,25 @@ namespace projetobiblioteca.Controllers
             return Ok(bookEnabled);
         }
         [HttpPatch("disable/{id:long}")]
-        public IActionResult Disable([FromRoute]long  id)
+        public IActionResult Disable([FromRoute] long id)
         {
             _logger.LogInformation("trying modified Enable to Disable");
             var bookDisabled = _service.Disable(id);
-            if(bookDisabled == null)
+            if (bookDisabled == null)
             {
                 _logger.LogWarning("attempt for modiefied enable to disable was unsuccessfully");
                 return BadRequest("attempt for modiefied enable to disable was unsuccessfully");
             }
             _logger.LogInformation("book modified for Enabled with Succesfully");
             return Ok(bookDisabled);
+        }
+        [HttpGet("Export")]
+        public IActionResult Export
+        ([FromHeader(Name = "Accept")] string acceptHeader)
+        {
+            var query = _service.Show();
+            var exporter = _exporter.GetExporter(acceptHeader);
+            return exporter.ExportFile(query);
         }
     }
 }

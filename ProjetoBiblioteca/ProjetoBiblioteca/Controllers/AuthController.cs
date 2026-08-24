@@ -176,5 +176,6 @@ namespace projetobiblioteca.Controllers
             return Ok(user.Adapt<RegisterUser>());
         }
 
+
     }
 }

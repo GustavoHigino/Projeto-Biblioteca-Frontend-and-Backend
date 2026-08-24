@@ -5,18 +5,18 @@ using projetobiblioteca.Model;
 
 namespace projetobiblioteca.FileExport.Exporter.Factory
 {
-    public class FileExporterFactory
+    public class FileExporterFactory<T>
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly ILogger<FileExporterFactory>
+        private readonly ILogger<FileExporterFactory<T>>
             _logger;
         public FileExporterFactory(IServiceProvider serviceProvider,
-            ILogger<FileExporterFactory> logger)
+            ILogger<FileExporterFactory<T>> logger)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;
         }
-        public IFileExporter<Aluno> GetExporter(
+        public IFileExporter<T> GetExporter(
             string acceptHeader)
         {
             if(string.Equals(acceptHeader,
@@ -27,7 +27,7 @@ namespace projetobiblioteca.FileExport.Exporter.Factory
                     $"Selected excel file exporter" +
                     $" for media type {acceptHeader}");
                 return _serviceProvider.GetService
-                    <XlsxExporterAluno<Aluno>>();
+                    <XlsxExporterAluno<T>>();
 
             }
             else if(string.Equals(acceptHeader,
@@ -37,7 +37,15 @@ namespace projetobiblioteca.FileExport.Exporter.Factory
                 _logger.LogInformation(
                     $"Selected csv file exporter for " +
                     $"media type {acceptHeader}");
-                return _serviceProvider.GetService<CsvExporterAluno<Aluno>>();
+                return _serviceProvider.GetService<CsvExporterAluno<T>>();
+            }
+            else if(string.Equals(acceptHeader,
+                MediaTypes.ApplicationPdf,
+                StringComparison.OrdinalIgnoreCase))
+            {
+                _logger.LogInformation(
+        $"Selected pdf file exporter for media type {acceptHeader}");
+                return _serviceProvider.GetService<PdfExporterAluno<T>>();
             }
             else
             {

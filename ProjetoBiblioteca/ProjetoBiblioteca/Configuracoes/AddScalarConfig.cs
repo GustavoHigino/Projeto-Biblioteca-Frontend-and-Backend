@@ -1,6 +1,6 @@
 ﻿using Scalar.AspNetCore;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddScalarConfig
     {

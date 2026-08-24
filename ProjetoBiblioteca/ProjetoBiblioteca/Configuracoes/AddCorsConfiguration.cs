@@ -1,4 +1,4 @@
-﻿namespace projetobiblioteca.Configurações
+﻿namespace projetobiblioteca.Configuracoes
 {
     public static class AddCorsConfiguration
     {

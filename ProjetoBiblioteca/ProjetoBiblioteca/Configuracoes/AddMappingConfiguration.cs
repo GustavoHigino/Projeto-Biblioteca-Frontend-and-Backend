@@ -4,7 +4,7 @@ using projetobiblioteca.Mappers;
 using projetobiblioteca.Model;
 using projetobiblioteca.Pagination;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddMappingConfiguration
     {

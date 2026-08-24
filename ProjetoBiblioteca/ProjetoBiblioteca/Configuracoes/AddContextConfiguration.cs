@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using projetobiblioteca.Context;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddContextConfiguration
     {

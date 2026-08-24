@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using projetobiblioteca.Data;
 using projetobiblioteca.Data.DTO.Funcionario;
+using projetobiblioteca.FileExport.Exporter.Factory;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
 
@@ -15,9 +17,12 @@ namespace projetobiblioteca.Controllers
     {
         private readonly ILogger<FuncionarioController> _logger;
         private readonly IFuncionarioService _service;
+        private readonly FileExporterFactory<Funcionario> _exporter;
         public FuncionarioController(ILogger<FuncionarioController> logger,
-            IFuncionarioService service)
+            IFuncionarioService service,
+            FileExporterFactory<Funcionario> exporter)
         {
+            _exporter = exporter;
             _logger = logger;
             _service = service;
         }
@@ -104,14 +109,22 @@ namespace projetobiblioteca.Controllers
         public IActionResult Disable([FromRoute] long id)
         {
             _logger.LogInformation($"trying disable an ID {id}");
-            var employeeDisable=_service.Disable(id);
-            if(employeeDisable == null)
+            var employeeDisable = _service.Disable(id);
+            if (employeeDisable == null)
             {
                 _logger.LogWarning("Something happen wrong with operation about disable employee");
                 return BadRequest("Something happen wrong with operation about disable employee");
             }
             _logger.LogInformation($"Id {id} disable succesfully");
-            return Ok(employeeDisable); 
+            return Ok(employeeDisable);
+        }
+        [HttpGet("Export")]
+        public IActionResult Export
+        ([FromHeader(Name = "Accept")] string acceptHeader)
+        {
+            var query = _service.Show();
+            var exporter = _exporter.GetExporter(acceptHeader);
+            return exporter.ExportFile(query);
         }
     }
 }

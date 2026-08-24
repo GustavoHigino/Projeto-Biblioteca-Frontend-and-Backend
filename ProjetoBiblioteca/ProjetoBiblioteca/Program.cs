@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using projetobiblioteca.Configurações;
+using projetobiblioteca.Configuracoes;
 using projetobiblioteca.Context;
+using projetobiblioteca.FileExport.Exporter.Factory;
+using projetobiblioteca.FileExport.Exporter.Impl;
 using projetobiblioteca.HATEOAS.Filters;
 using projetobiblioteca.Mail;
 using projetobiblioteca.Repositorios;
@@ -39,6 +41,11 @@ builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddScoped<IEmprestimoFuncionarioRepository, EmprestimoFuncionarioRepository>();
 builder.Services.AddScoped<IEmprestimoAlunoRepository, EmprestimoAlunoRepository>();
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+builder.Services.AddScoped(typeof(XlsxExporterAluno<>));
+builder.Services.AddScoped(typeof(CsvExporterAluno<>));
+builder.Services.AddScoped(typeof(PdfExporterAluno<>));
+builder.Services.AddScoped(typeof(FileExporterFactory<>));
+
 //builder.Services.AddScoped<HypermediaFilterOptions>();
 
 // Add services to the container.

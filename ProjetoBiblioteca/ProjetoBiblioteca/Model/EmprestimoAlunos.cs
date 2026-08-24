@@ -22,6 +22,10 @@ namespace projetobiblioteca.Model
         public DateTime Fim { get; set; } = DateTime.UtcNow.AddDays(7);
         [Required]
         public bool Devolvido { get; set; } = false;
+        [Column("ValorMulta")]
+        public int ValorMulta { get; set; } = 0;
+        [Column("Multado")]
+        public bool Multado { get; set; } = false;
         [ForeignKey(nameof(IdAluno))]
         
         public Aluno Aluno { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddRouteConfig
     {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetobiblioteca.Data;
 using projetobiblioteca.Data.DTO.Aluno;
+using projetobiblioteca.FileExport.Exporter.Factory;
 using projetobiblioteca.HATEOAS.Filters;
 using projetobiblioteca.Model;
 using projetobiblioteca.Servicos;
@@ -15,12 +16,15 @@ public class AlunosController : ControllerBase
 {
     private readonly ILogger<AlunosController> _logger;
     private readonly IAlunoService _alunoService;
+    private readonly FileExporterFactory<Aluno> _exporter;
 
     public AlunosController(ILogger<AlunosController> logger,
-        IAlunoService alunoService)
+        IAlunoService alunoService,
+        FileExporterFactory<Aluno> exporter)
     {
         _alunoService = alunoService;
         _logger = logger;
+        _exporter = exporter;
     }
     [HttpGet]
     public async Task<IActionResult> ShowPagined([FromQuery]int itensPage,[FromQuery]long pageCurrently)
@@ -100,5 +104,13 @@ public class AlunosController : ControllerBase
         }
         _logger.LogInformation($"Student {student.Id}, {student.Nome} update for Disable with succesfully");
         return Ok(student);
+    }
+    [HttpGet("Export")]
+    public IActionResult Export
+        ([FromHeader(Name ="Accept")]string acceptHeader)
+    {
+        var query = _alunoService.Show();
+        var exporter = _exporter.GetExporter(acceptHeader);
+        return exporter.ExportFile(query);
     }
 }

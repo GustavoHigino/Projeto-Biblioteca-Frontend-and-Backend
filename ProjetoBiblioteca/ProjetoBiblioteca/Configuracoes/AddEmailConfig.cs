@@ -1,6 +1,6 @@
 ﻿using projetobiblioteca.Mail.Data;
 
-namespace projetobiblioteca.Configurações
+namespace projetobiblioteca.Configuracoes
 {
     public static class AddEmailConfig
     {

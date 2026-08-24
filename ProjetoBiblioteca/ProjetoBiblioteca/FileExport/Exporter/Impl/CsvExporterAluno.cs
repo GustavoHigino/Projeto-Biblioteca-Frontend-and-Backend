@@ -8,10 +8,10 @@ using System.Text;
 
 namespace projetobiblioteca.FileExport.Exporter.Impl
 {
-    public class CsvExporterAluno<Aluno> : IFileExporter<Aluno>
+    public class CsvExporterAluno<T> : IFileExporter<T>
     {
         public FileContentResult ExportFile
-            (IQueryable<Aluno> list)
+            (IQueryable<T> list)
         {
             using var memoryStream =
                 new MemoryStream();
@@ -30,7 +30,7 @@ namespace projetobiblioteca.FileExport.Exporter.Impl
             return new FileContentResult(fileBytes,
                 MediaTypes.ApplicationCsv)
             {
-                FileDownloadName = $"Aluno_exported_" +
+                FileDownloadName = $"exported_" +
                 $"{DateTime.UtcNow:yyyyMMddHHmmss}.csv"
             };
 

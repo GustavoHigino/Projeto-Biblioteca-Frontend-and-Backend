@@ -15,8 +15,6 @@ namespace projetobiblioteca.HATEOAS.Utilis
                 contentType == typeof(PaginationClass<T>) ||
                 typeof(IEnumerable<T>).IsAssignableFrom(contentType);
         }
-        protected abstract Task EnrichModel(
-            T content, IUrlHelper urlHelper);
         bool IResponseEnricher.CanEnrich(ResultExecutingContext response)
         {
             if(response.Result is OkObjectResult
@@ -28,6 +26,8 @@ namespace projetobiblioteca.HATEOAS.Utilis
             }
             return false;
         }
+        protected abstract Task EnrichModel(
+            T content, IUrlHelper urlHelper);
 
         public async Task Enrich(ResultExecutingContext context)
         {

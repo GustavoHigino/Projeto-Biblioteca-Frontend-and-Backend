@@ -19,7 +19,7 @@ namespace projetobiblioteca.HATEOAS.Enricher
             var baseUrl = $"{request.Scheme}://" +
                 $"{request.Host.ToUriComponent()}" +
                 $"{request.PathBase.ToUriComponent()}" +
-                $"/Aluno";
+                $"/Alunos";
 
             content.Links.AddRange(
                 GenerateLinks(

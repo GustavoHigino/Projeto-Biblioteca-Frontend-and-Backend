@@ -1,0 +1,42 @@
+:root{
+    --Black:black;
+    --White:white;
+    --color-BackGround-light:#61b0d0;
+    --color-BackGround-Medium:#3d9ccc;
+    --color-BackGround-High:#176a98;
+    --color-contrasct-light:#76db93;
+    --color-contrasct-medium:#4d9462;
+    --color-contrasct-high:#1d4d49;
+
+}
+html,body{
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display:grid ;
+    grid-template: auto 90% auto/ auto 200px auto;
+}
+main{
+
+    grid-area: 2/ 2 / 3 /3;
+    display: grid;
+    grid-template: auto 70% /auto ;
+    background-color:var(--color-BackGround-High);
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+}
+section#login{
+    grid-area: 1/1/3/2;
+    background-color: var(--color-BackGround-High);
+    
+    
+    
+    
+}
+section.off{
+    display: none;
+}

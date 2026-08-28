@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace projetobiblioteca.Migrations
 {
     /// <inheritdoc />
-    public partial class addfirstmigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,6 +24,7 @@ namespace projetobiblioteca.Migrations
                     Telefone = table.Column<string>(type: "varchar(12)", maxLength: 12, nullable: false),
                     Email = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false),
                     Nascimento = table.Column<DateTime>(type: "date", nullable: false),
+                    Emprestimos = table.Column<int>(type: "int", nullable: false),
                     Habilitado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -44,6 +45,7 @@ namespace projetobiblioteca.Migrations
                     Endereço = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false),
                     Nascimento = table.Column<DateTime>(type: "date", nullable: false),
+                    Emprestimos = table.Column<int>(type: "int", nullable: false),
                     Habilitado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -99,7 +101,9 @@ namespace projetobiblioteca.Migrations
                     IdLivro = table.Column<long>(type: "bigint", nullable: false),
                     Inicio = table.Column<DateTime>(type: "date", nullable: false),
                     Fim = table.Column<DateTime>(type: "date", nullable: false),
-                    Devolvido = table.Column<bool>(type: "bit", nullable: false)
+                    Devolvido = table.Column<bool>(type: "bit", nullable: false),
+                    ValorMulta = table.Column<int>(type: "int", nullable: false),
+                    Multado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -128,7 +132,9 @@ namespace projetobiblioteca.Migrations
                     IdLivro = table.Column<long>(type: "bigint", nullable: false),
                     Inicio = table.Column<DateTime>(type: "date", nullable: false),
                     Fim = table.Column<DateTime>(type: "date", nullable: false),
-                    Devolvido = table.Column<bool>(type: "bit", nullable: false)
+                    Devolvido = table.Column<bool>(type: "bit", nullable: false),
+                    ValorMulta = table.Column<int>(type: "int", nullable: false),
+                    Multado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -140,8 +146,8 @@ namespace projetobiblioteca.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_EmprestimosFuncionarios_livros_IdFuncionario",
-                        column: x => x.IdFuncionario,
+                        name: "FK_EmprestimosFuncionarios_livros_IdLivro",
+                        column: x => x.IdLivro,
                         principalTable: "livros",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -161,6 +167,11 @@ namespace projetobiblioteca.Migrations
                 name: "IX_EmprestimosFuncionarios_IdFuncionario",
                 table: "EmprestimosFuncionarios",
                 column: "IdFuncionario");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EmprestimosFuncionarios_IdLivro",
+                table: "EmprestimosFuncionarios",
+                column: "IdLivro");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_Username",

@@ -29,7 +29,7 @@ namespace projetobiblioteca.Context
             modelBuilder.Entity<EmprestimoFuncionario>()
                 .HasOne(e => e.Livro)
                 .WithMany(e => e.EmprestimosFuncionario)
-                .HasForeignKey(e => e.IdFuncionario)
+                .HasForeignKey(e => e.IdLivro)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<EmprestimoAlunos>()
                 .HasOne(e => e.Aluno)

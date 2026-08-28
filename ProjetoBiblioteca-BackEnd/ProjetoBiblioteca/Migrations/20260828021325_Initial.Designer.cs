@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using projetobiblioteca.Context;
 
@@ -11,9 +12,11 @@ using projetobiblioteca.Context;
 namespace projetobiblioteca.Migrations
 {
     [DbContext(typeof(MSSQL))]
-    partial class MSSQLModelSnapshot : ModelSnapshot
+    [Migration("20260828021325_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +43,9 @@ namespace projetobiblioteca.Migrations
                         .IsRequired()
                         .HasMaxLength(80)
                         .HasColumnType("varchar(80)");
+
+                    b.Property<int>("Emprestimos")
+                        .HasColumnType("int");
 
                     b.Property<string>("Endereço")
                         .IsRequired()
@@ -96,6 +102,14 @@ namespace projetobiblioteca.Migrations
                     b.Property<DateTime>("Inicio")
                         .HasColumnType("date");
 
+                    b.Property<bool>("Multado")
+                        .HasColumnType("bit")
+                        .HasColumnName("Multado");
+
+                    b.Property<int>("ValorMulta")
+                        .HasColumnType("int")
+                        .HasColumnName("ValorMulta");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdAluno");
@@ -129,9 +143,19 @@ namespace projetobiblioteca.Migrations
                     b.Property<DateTime>("Inicio")
                         .HasColumnType("date");
 
+                    b.Property<bool>("Multado")
+                        .HasColumnType("bit")
+                        .HasColumnName("Multado");
+
+                    b.Property<int>("ValorMulta")
+                        .HasColumnType("int")
+                        .HasColumnName("ValorMulta");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdFuncionario");
+
+                    b.HasIndex("IdLivro");
 
                     b.ToTable("EmprestimosFuncionarios");
                 });
@@ -149,6 +173,9 @@ namespace projetobiblioteca.Migrations
                         .IsRequired()
                         .HasMaxLength(80)
                         .HasColumnType("varchar(80)");
+
+                    b.Property<int>("Emprestimos")
+                        .HasColumnType("int");
 
                     b.Property<string>("Endereço")
                         .IsRequired()
@@ -310,7 +337,7 @@ namespace projetobiblioteca.Migrations
 
                     b.HasOne("projetobiblioteca.Model.Livro", "Livro")
                         .WithMany("EmprestimosFuncionario")
-                        .HasForeignKey("IdFuncionario")
+                        .HasForeignKey("IdLivro")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

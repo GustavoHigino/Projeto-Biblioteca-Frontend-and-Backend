@@ -37,6 +37,7 @@ namespace projetobiblioteca.Model
         [Required]
         [Column(TypeName ="date")]//"1995-05-20"
         public DateTime Nascimento { get; set; }
+        [Column]
         public int Emprestimos { get; set; } = 0;
 
         

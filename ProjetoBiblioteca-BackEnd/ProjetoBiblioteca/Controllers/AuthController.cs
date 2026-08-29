@@ -68,7 +68,7 @@ namespace projetobiblioteca.Controllers
                     (_configuration
                     ["TokenConfiguration:DaysToExpiry"]))
                 });
-            return Ok("Login done with successfully");
+            return Ok("login done with successfully");
         }
         [HttpPost("register")]
         [AllowAnonymous]

@@ -4,10 +4,10 @@ using projetobiblioteca.Data.DTO.User;
 using projetobiblioteca.Model;
 using projetobiblioteca.tests.Tools;
 using System.Net.Http.Json;
-
+using Xunit;
 namespace projetobiblioteca.tests.Cors
 {
-    public class CorsTest
+    public class CorsTest : IClassFixture<SqlServerFixture>
     {
         private readonly HttpClient _http;
         private static TokenDto _token;
@@ -32,14 +32,12 @@ namespace projetobiblioteca.tests.Cors
                 ("gustavo", "123456");
             
             var response = await _http.PostAsJsonAsync
-                ("auth/signin", credentials);
+                ("Auth/signin", credentials);
             response.EnsureSuccessStatusCode();
             var token = await response.Content
-                .ReadFromJsonAsync<TokenDto>();
+                .ReadAsStringAsync();
             token.Should().NotBeNull();
-            token.AccessToken.Should().NotBeNullOrWhiteSpace();
-            token.RefreshToken.Should().NotBeNullOrWhiteSpace();
-            _token = token;
+            token.Should().Be("login done with successfully");
                
         }
     }

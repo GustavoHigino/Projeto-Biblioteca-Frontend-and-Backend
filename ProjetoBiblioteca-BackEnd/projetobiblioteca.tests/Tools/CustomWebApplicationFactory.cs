@@ -8,11 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using Xunit;
 
 namespace projetobiblioteca.tests.Tools
 {
     internal class CustomWebApplicationFactory<TProgram>
-        :WebApplicationFactory<TProgram>
+        : WebApplicationFactory<TProgram>
         where TProgram : class
     {
         private readonly string _connectionString;
@@ -24,7 +25,7 @@ namespace projetobiblioteca.tests.Tools
         protected override void ConfigureWebHost
             (IWebHostBuilder builder)
         {
-            builder.ConfigureAppConfiguration ((
+            builder.ConfigureAppConfiguration((
                 context,
                 config) =>
             {
@@ -34,15 +35,21 @@ namespace projetobiblioteca.tests.Tools
                 .Location)!, "appsettings.Test.json");
                 config.Sources.Clear();
                 config.AddJsonFile(
-                    testConfigPath,
-                    optional: false,
+                    testConfigPath, optional: false,
                     reloadOnChange: true);
+                if (File.Exists(testConfigPath))
+                {
+                    config.AddJsonFile(testConfigPath, optional: true, reloadOnChange: true);
+                }
 
+                // NOVA MODIFICAÇÃO: Injeta os valores diretamente no IConfiguration da API
+                
             });
             builder.ConfigureServices(
-                services =>
+                    services =>
                 {
-                    var descriptor = services.SingleOrDefault
+                    var descriptor = services
+                    .SingleOrDefault
                     (d => d.ServiceType == typeof
                     (DbContextOptions<MSSQL>));
                     if (descriptor != null)
@@ -54,6 +61,10 @@ namespace projetobiblioteca.tests.Tools
                         .UseSqlServer(
                             _connectionString));
                 });
+
+
+
+
             
         }
     }

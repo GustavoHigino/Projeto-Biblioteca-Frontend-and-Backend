@@ -33,7 +33,7 @@ namespace projetobiblioteca.Controllers
         }
         [HttpPost("signin")]
         [AllowAnonymous]
-        public IActionResult SignUp(UserDto user)
+        public IActionResult SignUp([FromBody]UserDto user)
         {
             var userFound=_userService.FindByUsername(user.Username);
             if(userFound.Key!= "verificado")
@@ -63,7 +63,7 @@ namespace projetobiblioteca.Controllers
                     HttpOnly = true,
                     Secure = true,
                     SameSite = SameSiteMode.Strict,
-                    Expires = DateTime.UtcNow.AddDays
+                    Expires = DateTime.UtcNow.AddDays//colocado pois apaga o coockie sozinho nesse horario
                     (Convert.ToInt32
                     (_configuration
                     ["TokenConfiguration:DaysToExpiry"]))
@@ -93,7 +93,7 @@ namespace projetobiblioteca.Controllers
         }
         [HttpPatch("revoketoken")]
         [Authorize]
-        public IActionResult RevokeToken(long id)
+        public IActionResult RevokeToken()
         {
             var username = User.Identity.Name;
             var value=_userService.RevokeToken(username);
@@ -103,7 +103,7 @@ namespace projetobiblioteca.Controllers
         }
         [AllowAnonymous]
         [HttpPut("refresh")]
-        public IActionResult refresh(TokenDto tokenDto)
+        public IActionResult refresh()
         {
             if(!Request.Cookies.TryGetValue
                 ("X-Refresh-Token",
@@ -112,10 +112,7 @@ namespace projetobiblioteca.Controllers
                 return BadRequest("Refresh token " +
                     "not found on cookies");
             }
-            if(tokenDto == null)
-            {
-                return BadRequest();
-            }
+            
             var refreshToken= _userService.Refresh(
                 new TokenDto
                 {

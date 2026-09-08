@@ -23,7 +23,7 @@ namespace projetobiblioteca.Configuracoes
         {
             app.MapControllerRoute(
                 "Default",
-                "{controller=values}/v1/{id?}");
+                "{controller=values}/{id?}");
         }
     }
 }

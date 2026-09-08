@@ -27,6 +27,7 @@ namespace projetobiblioteca.FileExport.Exporter.Impl
             csv.WriteRecords(list);
             writer.Flush();
             var fileBytes = memoryStream.ToArray();
+            memoryStream.Position = 0;
             return new FileContentResult(fileBytes,
                 MediaTypes.ApplicationCsv)
             {

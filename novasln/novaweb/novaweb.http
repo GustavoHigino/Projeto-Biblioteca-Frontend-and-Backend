@@ -1,0 +1,6 @@
+@novaweb_HostAddress = http://localhost:5244
+
+GET {{novaweb_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

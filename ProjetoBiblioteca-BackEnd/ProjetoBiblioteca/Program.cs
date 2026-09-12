@@ -86,4 +86,7 @@ app.MapControllers();
 app.UseHATEOASRoutes();
 app.UseScalarConfiguration();
 
-app.Run();
+var port = Environment.GetEnvironmentVariable
+    ("PORT") ?? "8080";
+
+app.Run($"http://*:{port}");

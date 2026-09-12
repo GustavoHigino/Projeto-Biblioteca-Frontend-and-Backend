@@ -1,4 +1,4 @@
-@ProjetoBiblioteca_HostAddress = http://localhost:5241
+@ProjetoBiblioteca_HostAddress = http://localhost:8080
 
 GET {{ProjetoBiblioteca_HostAddress}}
 Accept: application/json

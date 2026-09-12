@@ -66,7 +66,7 @@ public class AlunosController : ControllerBase
         }
         var student=_alunoService.Add(aluno);
 
-        _logger.LogInformation($"{student.Id}: Student = {student.Nome} Add. ");
+        _logger.LogInformation($" Student = {student.Nome} Add. ");
         return Ok(student);
     }
     [HttpPut]

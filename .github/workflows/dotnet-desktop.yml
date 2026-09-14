@@ -51,4 +51,4 @@ jobs:
 
     - name: Docker Compose Build
       run: docker compose build
-      working-directory: ProjetoBiblioteca.slnx
+      working-directory: ProjetoBiblioteca-BackEnd

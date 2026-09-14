@@ -3,5 +3,5 @@
     <Build />
   </Project>
   <Project Path="projetobiblioteca.tests/projetobiblioteca.tests.csproj" Id="8171401f-c563-4977-9658-2bf9982cbdb4" />
-  <Project Path="projetobiblioteca/projetobiblioteca.csproj" />
+  <Project Path="ProjetoBiblioteca/ProjetoBiblioteca.csproj" />
 </Solution>

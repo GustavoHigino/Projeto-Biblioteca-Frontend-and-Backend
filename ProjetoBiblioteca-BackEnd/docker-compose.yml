@@ -3,7 +3,7 @@ services:
     image: gustavohigino/projetobiblioteca:latest
     build:
       context: .
-      dockerfile: projetobiblioteca/Dockerfile
+      dockerfile: ProjetoBiblioteca/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionMSSQL__ConnectionString=Data Source=host.docker.internal,1433;Initial Catalog=ProjetoBiblioteca;User Id=sa;Password=${Password_Database};TrustServerCertificate=true

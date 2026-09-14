@@ -52,3 +52,13 @@ jobs:
     - name: Docker Compose Build
       run: docker compose build
       working-directory: ProjetoBiblioteca-BackEnd
+
+    - name: Push to Docker Hub Container Registry
+      run: |
+        docker tag ${{secrets.DOCKER_USERNAME}}/projetobiblioteca:latest ${{secrets.DOCKER_USERNAME}}/projetobiblioteca:${{github.run_id}} 
+        
+        docker push ${{secrets.DOCKER_USERNAME}}/projetobiblioteca:latest
+
+        docker push ${{secrets.DOCKER_USERNAME}}/projetobiblioteca:${{github.run_id}}
+
+  

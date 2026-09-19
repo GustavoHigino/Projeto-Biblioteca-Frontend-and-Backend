@@ -36,31 +36,9 @@
             
         }
         public static IApplicationBuilder UseCorsConfiguration(
-            this IApplicationBuilder app,
-            IConfiguration configuration)
+            this IApplicationBuilder app)
         {
-            var origins = GetAllowedOrigins(configuration);
-            app.Use(async (context, next) =>
-            {
-                var selfOrigin =
-                $"{context.Request.Scheme}://{context.Request.Host}";
-                var origin = context.Request
-                .Headers["Origin"].ToString();
-
-                if (!string.IsNullOrEmpty(origin)
-                && !origin.Equals(selfOrigin,
-                StringComparison.OrdinalIgnoreCase)
-                && !origins.Contains(origin,
-                StringComparer.OrdinalIgnoreCase))
-                {
-                    context.Response.StatusCode =
-                    StatusCodes.Status403Forbidden;
-                    await context.Response.WriteAsync(
-                        "Cors origin not allowed");
-                    return;
-                }
-                await next();
-            });
+            
             app.UseCors("LocalPolicy");
             return app;
         }

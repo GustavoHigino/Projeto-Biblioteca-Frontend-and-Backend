@@ -1,0 +1,203 @@
+:root{
+    --cor-main-blue: #458eca;
+    --cor-main-blue-clear:#77c4f7;
+    --cor-main-blue-strong:#337091;
+    --cor-second-brown:#7d3c1e;
+    --cor-second-brown-clear:#c96435;
+    --cor-second-brown-strong:#462111;
+    --cor-white:#c4c1ba94;
+    --cor-white-clear:white;
+    --cor-white-strong:#888785;
+}
+/*normal*/
+html,body,main{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    outline: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+main{
+    display: grid;
+    grid-template: auto auto auto / auto 300px auto;
+    background-color: var(--cor-main-blue);
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    
+}
+article{
+    position: relative;
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+}
+
+
+b{
+    background-color: var(--cor-main-blue-clear);
+    height: 35px;
+    margin: 10px 0px 0px 0px;
+    width: 83%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var(--cor-white-strong);
+    text-align: center;
+    line-height: 32px;
+}
+b:hover{
+    background-color: var(--cor-main-blue);
+}
+a{
+
+    display: inline-block;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-left: 75px;
+    text-decoration: none;
+    color: var(--cor-white-strong);
+    
+    
+    
+}
+
+/*classes*/
+
+.on{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    grid-area: 2/2/3/3;
+    background-color: var(--cor-white-clear);
+    align-items: center;
+    
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px black;
+    overflow: hidden;
+    
+}
+.off{
+    display: none;
+}
+.Rlabel{
+    position: absolute;
+    left: 30px;
+    top: 6px;
+    color: var(--cor-white-strong);
+}
+.Rinput{
+    width: 83%;
+    margin: 4px 0px ;
+    padding: 4px;
+    border-radius: 5px;
+    outline: none ;
+    box-sizing: border-box;
+    border: 3px solid var(--cor-white);
+    
+}
+
+
+/*id*/
+#Mregistro{
+    height: 360px;
+}
+#MNlogin{
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    padding-top:18px ;
+    padding-bottom: 18px;
+    background-color: var(--cor-main-blue-clear);
+    
+    margin-bottom: 12px;
+}
+#MLUAusuario{
+    
+    padding: 0px 0px 8px 0px ;
+
+}
+#Mlogin{
+    height: 300px;
+}
+#Mlogin>article>label{
+    display: inline-block;
+    width: 110px;
+    height: 25px;
+    
+    position: absolute;
+    color: var(--cor-white-strong);
+}
+#Mlogin>article>#MLSinput{
+    width: 130px;
+    
+    height: 25px;
+    border-radius: 50px;
+}
+#Mlogin>article>#MLUinput{
+    width: 115px;
+    
+    height: 25px;
+    border-radius: 50px;
+}
+#MLALUsuario{
+    top: 5px;
+    left: 32px;
+    
+}
+#MLALSenha{
+    top: 5px;
+    left: 32px;
+}
+#MLSinput{
+    padding-left: 105px;
+    padding-right: 15px;
+    
+    border: 2px solid var(--cor-white);
+    outline: none;
+    
+}
+#MLUinput{
+    
+    padding-left: 120px;
+    padding-right: 15px;
+    border: 2px solid var(--cor-white);
+    outline: none;
+    
+}
+#SAPregistro{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    margin: 0px 0px 10px 0px;
+    background-color: var(--cor-main-blue);
+}
+#MRSCinput{
+    padding-left: 95px;
+    
+}
+#MRSinput{
+    padding-left: 95px;
+    
+}
+#MREinput{
+    padding-left: 85px;
+    
+}
+#MRNCinput{
+    padding-left: 90px;
+    
+}
+#MRUinput{
+    padding-left: 108px;
+    
+}
+
+
+
+

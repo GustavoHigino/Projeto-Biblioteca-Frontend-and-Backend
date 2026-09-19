@@ -1,39 +1,37 @@
-function AtualizarTamanho(){
-    const altura = window.innerHeight;
-    const loginImage= window.document.querySelector("#loginimage");
-    const login=window.document.querySelector("#login")
-    const body = window.document.body;
-    if(altura <300 && loginImage.classList.contains("active")&& login.classList.contains("active")){
-        loginImage.classList.add("off");
-        loginImage.classList.remove("active");
-        
-    }
-    else if(altura >300 && loginImage.classList.contains("off")&& login.classList.contains("active"))
-    {
-        body.style.gridTemplateRows = "auto 190px auto"
-        loginImage.classList.remove("off");
-        loginImage.classList.add("active");
-        body.style.gridTemplateRows = "auto 300px auto"
-    }
-        
-}
-function ClickSingUp(){
-    const login = window.document.querySelector("#login");
-    const loginImagem=window.document.querySelector("#loginimage")
-    
-    
-    if(login.classList.contains("active")){
-        
-        login.style.transform="translateX(-500px)";
-        login.style.zIndex = "1";
-        login.style.transition="all 3s ease";
-    }
-}
-AtualizarTamanho();
+const esperar = ms=>new Promise(resolve=> setTimeout(resolve, ms));
+window.document.addEventListener("click",async e=>{
+    const click = e.target
+    const login= document.querySelector("#Mlogin")
+    const registro=document.querySelector("#Mregistro")
+    if(login.classList.contains("on")&&click.id==="Lentrar"){
 
-const signUp=window.document.querySelector("#btnrdiv");
-window.addEventListener('resize',AtualizarTamanho);
+    }
+    if(login.classList.contains("on")&&click.id==="Lregistrar"){
+        login.style.transform="translateX(-100vw)";
+        login.style.transition="all 1s ease";
+        await esperar(500);
+        login.classList.remove("on");
+        login.classList.add("off");
+        registro.style.transform="translateX(+100vw)";
+        registro.classList.remove("off");
+        registro.classList.add("on");
+        await esperar(50);
+        registro.style.transform="translateX(0px)";
+        registro.style.transition="all 1s ease";
 
-signUp.addEventListener("click",
-    ClickSingUp
-)
+
+    }
+    if(registro.classList.contains("on")&& click.id==="Rvoltar"){
+        registro.style.transform="translateX(100vw)";
+        registro.style.transition="all 1s ease";
+        await esperar(500);
+        registro.classList.remove("on");
+        registro.classList.add("off");
+        login.style.transform="translate(-100vw)"
+        login.classList.remove("off");
+        login.classList.add("on");
+        await esperar(50);
+        login.style.transform="translateX(0px)";
+        login.style.transform="all 1s ease";
+    }
+})

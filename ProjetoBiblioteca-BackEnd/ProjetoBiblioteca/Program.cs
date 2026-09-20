@@ -80,7 +80,7 @@ if (!app.Environment.IsDevelopment())
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCorsConfiguration(builder.Configuration);
+app.UseCorsConfiguration();
 app.MapControllers();
 
 app.UseHATEOASRoutes();
